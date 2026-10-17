@@ -4,7 +4,7 @@
   "use strict";
 
   // start at the top of the page, or at the section in the link if there is one
-  // (like contact.html#camps). some hosts swap the page without a real reload
+  // (like bookings.html#camps). some hosts swap the page without a real reload
   // so the browser never jumps to the section on its own, so we just do it ourselves
   // the css has smooth scrolling on, so these jumps are set to instant or you'd
   // see the page slide around. we also stop as soon as the visitor scrolls themselves
@@ -33,12 +33,13 @@
   setTimeout(goToHashOrTop, 700);
 
   // back button for when a link drops you in the middle of another page
-  // (like "view upcoming camps" going to contact.html#camps). we save where
+  // (like "view upcoming camps" going to bookings.html#camps). we save where
   // you came from in sessionStorage so the button survives a refresh
   var PAGE_LABELS = {
     "index.html": "Home",
     "": "Home",
     "about.html": "The Roots",
+    "bookings.html": "The Work",
     "coaches.html": "Coaches",
     "alumni.html": "The Proof",
     "contact.html": "Contact",
@@ -78,20 +79,6 @@
     var container = target.querySelector(":scope > .wrap") || target;
     container.insertAdjacentElement("afterbegin", link);
   })();
-
-  // booking page: the training card buttons fill in the "what are you interested in"
-  // dropdown before jumping down to the form. landing on contact.html#camps picks camps too
-  var interestSelect = document.getElementById("f-interest");
-  function pickInterest(value) {
-    if (!interestSelect) return;
-    for (var i = 0; i < interestSelect.options.length; i++) {
-      if (interestSelect.options[i].text === value) { interestSelect.selectedIndex = i; return; }
-    }
-  }
-  document.querySelectorAll("[data-interest]").forEach(function (btn) {
-    btn.addEventListener("click", function () { pickInterest(btn.getAttribute("data-interest")); });
-  });
-  if (window.location.hash === "#camps") pickInterest("Camps");
 
   // mobile menu
   var burger = document.getElementById("burgerBtn");
