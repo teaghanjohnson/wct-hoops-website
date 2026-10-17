@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/shop-cart.css">
 <style>
   .tbd-banner{background:var(--ink-2);border:1px dashed var(--line-dark);padding:16px 20px;font-size:13px;color:var(--muted-dark);line-height:1.6;margin-top:28px;}
   .tbd-banner b{color:var(--gold-light);}
@@ -55,12 +56,11 @@
     </div>
 
     <div class="tbd-banner">
-      <b>How to order:</b> online checkout isn't live yet. Browse the gear below, then email <a id="shopEmailLink" href="mailto:rans@wcthoops.com" style="color:var(--gold-light);text-decoration:underline;">rans@wcthoops.com</a> with the items you want and how many of each size (for example, &ldquo;2 Large, 1 Small&rdquo;). WCT will confirm availability, price, pickup or shipping, and payment with you by email. Nothing on this page charges you.
-      <div style="margin-top:16px;"><a href="mailto:rans@wcthoops.com?subject=WCT%20Merch%20Order" class="btn btn-solid" id="shopOrderBtn">Email Your Order &rarr;</a></div>
+      <b>How to order:</b> tap a size to add it to your cart, then check out securely through Stripe. Choose shipping to Canada or the USA, or free pickup in North Vancouver, BC, at checkout. Questions? Email <a href="mailto:rans@wcthoops.com" style="color:var(--gold-light);text-decoration:underline;">rans@wcthoops.com</a>.
     </div>
 
     <div class="tbd-banner" style="border-style:solid;">
-      <b>Tee deal:</b> $30 for 1 tee, or <b>$50 for any 2 tees</b>. Crew necks are $50 and socks are $20 (no bundle). Ship to Canada or the USA (shipping rates calculated for your order) or pick up in North Vancouver, BC.
+      <b>Tee deal:</b> $30 for 1 tee, or <b>$50 for any 2 tees</b>. Crew necks are $50 and socks are $20 (no bundle). The tee deal is applied automatically at checkout.
     </div>
 
     <div class="shop-grid" id="shopGrid">
@@ -399,5 +399,6 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/shop-cart.js" defer></script>
 </body>
 </html>
