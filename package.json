@@ -1,0 +1,8 @@
+{
+  "name": "wct-hoops-site",
+  "private": true,
+  "scripts": {
+    "dev": "netlify dev",
+    "seed:test": "node scripts/seed-stripe-test-products.js"
+  }
+}
