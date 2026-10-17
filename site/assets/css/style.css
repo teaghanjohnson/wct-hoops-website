@@ -23,7 +23,7 @@
 
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-/* any element a link jumps to (e.g. contact.html#training, about.html#journey)
+/* any element a link jumps to (e.g. bookings.html#training, about.html#journey)
    lands with its top clear of the fixed nav bar, instead of tucked underneath it. */
 [id]{scroll-margin-top:calc(var(--nav-h) + 24px);}
 body{
@@ -120,7 +120,7 @@ h1,h2,h3{font-family:"Anton",Impact,sans-serif;font-weight:400;letter-spacing:0.
     linear-gradient(100deg, rgba(90,46,140,0.24), transparent 55%);
 }
 .hero-brandmark{position:relative;display:flex;justify-content:center;padding-bottom:18px;}
-.hero-brandmark img{height:84px;width:84px;object-fit:contain;filter:drop-shadow(0 2px 18px rgba(0,0,0,0.5));}
+.hero-brandmark img{height:84px;width:84px;object-fit:contain;}
 .hero-content{position:relative;padding-bottom:56px;transition:opacity .9s ease;}
 .hero-content.dimmed{opacity:0.5;}
 .hero-content:hover,.hero-content:focus-within{opacity:1;}
