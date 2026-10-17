@@ -4,5 +4,11 @@
   "scripts": {
     "dev": "netlify dev",
     "seed:test": "node scripts/seed-stripe-test-products.js"
+  },
+  "dependencies": {
+    "stripe": "^23.0.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^27.13.0"
   }
 }
