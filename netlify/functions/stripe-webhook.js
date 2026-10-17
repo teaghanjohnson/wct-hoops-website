@@ -1,11 +1,12 @@
-// POST /.netlify/functions/stripe-webhook  (Stripe calls this after a payment)
+// post /.netlify/functions/stripe-webhook (stripe calls this after a payment)
+// lowers the stock on each price that was bought
 
 const { stripe } = require("../lib/stripe");
 
 exports.handler = async (event) => {
   if (event.httpMethod !== "POST") return { statusCode: 405, body: "" };
 
-  // signature check needs the exact raw body Stripe sent.
+  // signature check needs the exact raw body stripe sent
   const raw = event.isBase64Encoded
     ? Buffer.from(event.body, "base64")
     : event.body;
@@ -38,7 +39,7 @@ exports.handler = async (event) => {
 };
 
 async function reduceStock(session) {
-  // stripe can send the same event more than once, so mark the payment once stock is updated.
+  // stripe can send the same event more than once, so mark the payment once stock is updated
   const pi = await stripe.paymentIntents.retrieve(session.payment_intent);
   if (pi.metadata.stock_reduced === "true") return;
 
