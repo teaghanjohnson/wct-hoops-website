@@ -1,12 +1,14 @@
-// POST /.netlify/functions/create-checkout-session
-// Body: {items: [{price: "<lookup_key>", qty: 2}]} -> {url: "<Stripe Checkout URL>"}
+// post /.netlify/functions/create-checkout-session
+// body: { items: [{ key: "<lookup_key>", qty }] }
+// returns { url } for the stripe hosted checkout page
 
 const { stripe, json } = require("../lib/stripe");
 
-const TEE_PAIR_DISCOUNT = 1000; // 2 tees = $50 instead of $60
+// two tees cost fifty dollars instead of sixty, so each pair takes ten dollars off (in cents)
+const TEE_PAIR_DISCOUNT_CENTS = 1000;
 const MAX_QTY_PER_ITEM = 10;
 
-// TODO: replace with the client's real rates ( amounts are in cents, CAD).
+// placeholder rates in cents (cad). swap in the client's real rates before launch
 const SHIPPING_OPTIONS = [
   {
     shipping_rate_data: {
@@ -32,44 +34,47 @@ const SHIPPING_OPTIONS = [
 ];
 
 exports.handler = async (event) => {
-  if (event.httpMethod !== "POST")
-    return json(405, { error: "Method not allowed" });
+  if (event.httpMethod !== "POST") return json(405, { error: "Method not allowed" });
 
-  // read and clean the cart, never trust prices from the browser, only keys and quantities.
+  // read and clean the cart. only keys and quantities come from the browser, never prices
   let items;
   try {
     items = JSON.parse(event.body || "{}").items;
   } catch {
     return json(400, { error: "Invalid request." });
   }
-  if (!Array.isArray(items) || items.length === 0 || items.length > 50)
+  if (!Array.isArray(items) || items.length === 0 || items.length > 50) {
     return json(400, { error: "Your cart is empty." });
+  }
 
   const qtyByKey = new Map();
   for (const item of items) {
-    const key = String(item.price || "");
+    const key = String(item.key || "");
     const qty = Math.floor(Number(item.qty));
-    if (!/^[a-z0-9-]{1,200}$/.test(key) || !(qty >= 1))
+    if (!/^[a-z0-9-]{1,200}$/.test(key) || !(qty >= 1)) {
       return json(400, { error: "Invalid item in cart." });
-    qtyByKey.set(
-      key,
-      Math.min((qtyByKey.get(key) || 0) + qty, MAX_QTY_PER_ITEM),
-    );
+    }
+    qtyByKey.set(key, Math.min((qtyByKey.get(key) || 0) + qty, MAX_QTY_PER_ITEM));
   }
 
   try {
-    // look up the real prices in stripe (lookup_keys allows 10 per request).
+    // look up the real prices in stripe. lookup_keys only takes ten at a time
     const keys = [...qtyByKey.keys()];
-    const bykey = new Map();
+    const byKey = new Map();
     for (let i = 0; i < keys.length; i += 10) {
       const page = await stripe.prices.list({
         lookup_keys: keys.slice(i, i + 10),
         active: true,
         expand: ["data.product"],
+        limit: 10,
       });
       page.data.forEach((p) => byKey.set(p.lookup_key, p));
     }
-    // 3. check stock and build line items
+
+    // check stock and build the line items
+    const line_items = [];
+    const problems = [];
+    let teeCount = 0;
     for (const [key, qty] of qtyByKey) {
       const price = byKey.get(key);
       if (!price || !price.product.active) {
@@ -79,9 +84,7 @@ exports.handler = async (event) => {
       const name = `${price.product.name} (${price.metadata.size || "One Size"})`;
       const stock = parseInt(price.metadata.stock, 10);
       if (!Number.isNaN(stock) && qty > stock) {
-        problems.push(
-          stock <= 0 ? `${name} is sold out` : `Only ${stock} left of ${name}`,
-        );
+        problems.push(stock <= 0 ? `${name} is sold out` : `Only ${stock} left of ${name}`);
         continue;
       }
       line_items.push({ price: price.id, quantity: qty });
@@ -89,7 +92,7 @@ exports.handler = async (event) => {
     }
     if (problems.length) return json(409, { error: problems.join(". ") + "." });
 
-    //  tee deal: $10 off for every 2 tees. A one-time coupon only this session can use.
+    // tee deal: a one time coupon that only this checkout can use
     let discounts;
     const pairs = Math.floor(teeCount / 2);
     if (pairs > 0) {
@@ -103,10 +106,11 @@ exports.handler = async (event) => {
       discounts = [{ coupon: coupon.id }];
     }
 
-    // create the checkout session.
-    const siteUrl = process.env.SITE_URL || process.env.URL; // netlify sets URL automatically
+    // netlify sets URL on its own when deployed
+    const siteUrl = process.env.SITE_URL || process.env.URL;
+
     const session = await stripe.checkout.sessions.create({
-      // set in stripe checkout studio, use "hosted" instead if your stripe package is below v21.
+      // set in stripe checkout studio. use "hosted" instead if the stripe package is older than the version that added hosted_page
       ui_mode: "hosted_page",
       billing_address_collection: "auto",
       phone_number_collection: { enabled: false },
@@ -121,7 +125,8 @@ exports.handler = async (event) => {
       ...(discounts && { discounts }),
       shipping_address_collection: { allowed_countries: ["CA", "US"] },
       shipping_options: SHIPPING_OPTIONS,
-      expires_at: Math.floor(Date.now() / 1000) + 31 * 60, // Stripe's minimum is 30 min
+      // stripe's minimum is half an hour, so give it a minute of headroom
+      expires_at: Math.floor(Date.now() / 1000) + 31 * 60,
       success_url: `${siteUrl}/shop-success.html?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${siteUrl}/shop.html`,
     });
@@ -130,8 +135,7 @@ exports.handler = async (event) => {
   } catch (err) {
     console.error("checkout failed:", err.message);
     return json(500, {
-      error:
-        "Checkout couldn't start. Please try again or email rans@wcthoops.com.",
+      error: "Checkout couldn't start. Please try again or email rans@wcthoops.com.",
     });
   }
 };
