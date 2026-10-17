@@ -115,14 +115,14 @@ exports.handler = async (event) => {
       billing_address_collection: "auto",
       phone_number_collection: { enabled: false },
       automatic_tax: { enabled: false },
-      allow_promotion_codes: false,
       submit_type: "auto",
       integration_identifier: "hosted_web_0002",
       origin_context: "web",
 
       mode: "payment",
       line_items,
-      ...(discounts && { discounts }),
+      // stripe won't take discounts and allow_promotion_codes together, so the checkout studio setting (false) is only sent when there's no tee deal
+      ...(discounts ? { discounts } : { allow_promotion_codes: false }),
       shipping_address_collection: { allowed_countries: ["CA", "US"] },
       shipping_options: SHIPPING_OPTIONS,
       // stripe's minimum is half an hour, so give it a minute of headroom
