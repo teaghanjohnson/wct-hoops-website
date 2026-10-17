@@ -1,6 +1,6 @@
 /* =========================================================
-   WCT HOOPS — shared site stylesheet
-   Tokens, layout, and components used across every page.
+   wct hoops — shared site stylesheet
+   tokens, layout, and components used across every page.
    ========================================================= */
 
 :root{
@@ -23,7 +23,7 @@
 
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-/* Any element a link jumps to (e.g. bookings.html#training, about.html#journey)
+/* any element a link jumps to (e.g. contact.html#training, about.html#journey)
    lands with its top clear of the fixed nav bar, instead of tucked underneath it. */
 [id]{scroll-margin-top:calc(var(--nav-h) + 24px);}
 body{
@@ -46,7 +46,7 @@ h1,h2,h3{font-family:"Anton",Impact,sans-serif;font-weight:400;letter-spacing:0.
 }
 .eyebrow::after{content:"";flex:0 0 44px;height:1px;background:currentColor;opacity:0.35;}
 
-/* ---------- NAV ---------- */
+/* ---------- nav ---------- */
 .nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
   padding:env(safe-area-inset-top,0px) 0 0 0;
@@ -96,7 +96,7 @@ h1,h2,h3{font-family:"Anton",Impact,sans-serif;font-weight:400;letter-spacing:0.
 .mobile-menu .mm-socials a{padding:0;border:0;display:flex;align-items:center;justify-content:center;}
 .mobile-menu .mm-socials a svg{width:20px;height:20px;}
 
-/* ---------- PAGE HERO (sub-pages) ---------- */
+/* ---------- page hero (sub-pages) ---------- */
 .page-hero{
   position:relative;padding-top:calc(var(--nav-h) + 70px);padding-bottom:64px;
   background:#000;overflow:hidden;
@@ -109,7 +109,7 @@ h1,h2,h3{font-family:"Anton",Impact,sans-serif;font-weight:400;letter-spacing:0.
 .page-hero h1{font-size:clamp(36px,7vw,72px);color:var(--paper);text-transform:uppercase;}
 .page-hero p{margin-top:16px;max-width:56ch;color:var(--muted-dark);font-size:16px;line-height:1.6;}
 
-/* ---------- HOME HERO ---------- */
+/* ---------- home hero ---------- */
 .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding-top:96px;background:#000;}
 .hero-media{position:absolute;inset:0;overflow:hidden;background:#000;}
 .hero-media video,.hero-media img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;filter:grayscale(35%) contrast(1.1) brightness(0.85);}
@@ -168,7 +168,7 @@ h1,h2,h3{font-family:"Anton",Impact,sans-serif;font-weight:400;letter-spacing:0.
 .btn-outline-dark:hover{border-color:var(--text-light);background:rgba(20,19,19,0.06);}
 .btn[disabled]{opacity:0.45;cursor:not-allowed;transform:none!important;}
 
-/* ---------- "BACK TO ___" LINK ON DEEP-LINKED SECTIONS ---------- */
+/* ---------- "back to ___" link on deep-linked sections ---------- */
 .section-back-link{
   display:inline-flex;align-items:center;gap:8px;margin-bottom:26px;
   font-size:11.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
@@ -178,7 +178,7 @@ h1,h2,h3{font-family:"Anton",Impact,sans-serif;font-weight:400;letter-spacing:0.
 .on-paper .section-back-link{color:var(--purple);border-color:var(--line-light);}
 .on-paper .section-back-link:hover{border-color:var(--purple);color:var(--purple);}
 
-/* ---------- SECTION SHELLS ---------- */
+/* ---------- section shells ---------- */
 section{padding-block:88px;position:relative;}
 .on-dark{background:var(--ink);color:var(--text-dark);}
 .on-ink2{background:var(--ink-2);color:var(--text-dark);}
@@ -186,7 +186,7 @@ section{padding-block:88px;position:relative;}
 .on-dark .muted, .on-ink2 .muted{color:var(--muted-dark);}
 .on-paper .muted{color:var(--muted-light);}
 
-/* ---------- SPLIT (image/text) ---------- */
+/* ---------- split (image/text) ---------- */
 .split{display:grid;gap:44px;align-items:center;}
 @media(min-width:880px){.split{grid-template-columns:1fr 1fr;gap:64px;}}
 .split.reverse .split-media{order:2;}
@@ -198,7 +198,7 @@ section{padding-block:88px;position:relative;}
 .on-paper .split-media .frame{border-color:rgba(20,19,19,0.25);}
 .quote-mark{font-family:"Anton";font-size:64px;line-height:1;color:var(--gold);margin-bottom:6px;}
 
-/* ---------- CARDS: WORK / GENERIC MEDIA CARD ---------- */
+/* ---------- cards: work / generic media card ---------- */
 .card-grid{display:grid;gap:24px;margin-top:52px;}
 @media(min-width:760px){.card-grid.cols-3{grid-template-columns:repeat(3,1fr);}}
 @media(min-width:760px){.card-grid.cols-2{grid-template-columns:repeat(2,1fr);}}
@@ -214,10 +214,10 @@ section{padding-block:88px;position:relative;}
 .media-link{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:12.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--paper);border-bottom:1px solid var(--gold);padding-bottom:3px;}
 .media-link:hover{color:var(--gold-light);}
 
-/* ---------- MISSING-PHOTO PLACEHOLDER (initials) ---------- */
+/* ---------- missing-photo placeholder (initials) ---------- */
 .avatar-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,var(--ink-2),#0a0a0a);font-family:'Anton';font-size:34px;color:var(--gold-light);}
 
-/* ---------- ALUMNI / TEAM GRID ---------- */
+/* ---------- alumni / team grid ---------- */
 .proof-grid{display:grid;gap:20px;margin-top:52px;grid-template-columns:repeat(2,1fr);}
 @media(min-width:760px){.proof-grid{grid-template-columns:repeat(4,1fr);}}
 .alum-card{border:1px solid var(--line-dark);background:var(--ink-2);}
@@ -235,7 +235,7 @@ section{padding-block:88px;position:relative;}
 .stat b{font-family:"Anton";font-size:clamp(30px,4vw,44px);color:var(--gold);display:block;}
 .stat span{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted-dark);}
 
-/* ---------- COACH CARDS ---------- */
+/* ---------- coach cards ---------- */
 .coach-grid{display:grid;gap:24px;margin-top:52px;grid-template-columns:repeat(2,1fr);}
 @media(min-width:700px){.coach-grid{grid-template-columns:repeat(3,1fr);}}
 @media(min-width:1000px){.coach-grid{grid-template-columns:repeat(4,1fr);}}
@@ -249,7 +249,7 @@ section{padding-block:88px;position:relative;}
 .coach-body ul{margin:12px 0 0;padding-left:16px;font-size:12.5px;line-height:1.6;color:var(--muted-dark);}
 .coach-body ul li{margin-bottom:3px;}
 
-/* ---------- STANDARD / QUOTE ---------- */
+/* ---------- standard / quote ---------- */
 .standard{text-align:center;}
 .standard .quote-mark{margin-inline:auto;}
 .standard h2{font-size:clamp(32px,6vw,64px);text-transform:uppercase;max-width:18ch;margin-inline:auto;}
@@ -257,7 +257,7 @@ section{padding-block:88px;position:relative;}
 .standard-words{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:36px;font-size:12.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-light);}
 .standard-words span:not(:last-child)::after{content:"—";margin-left:14px;color:var(--muted-dark);}
 
-/* ---------- PROCESS STEPS ---------- */
+/* ---------- process steps ---------- */
 .steps{display:grid;gap:24px;margin-top:52px;}
 @media(min-width:760px){.steps{grid-template-columns:repeat(4,1fr);}}
 .step{border-top:2px solid var(--gold);padding-top:16px;}
@@ -265,7 +265,7 @@ section{padding-block:88px;position:relative;}
 .step h4{margin-top:8px;font-size:16px;text-transform:uppercase;letter-spacing:0.02em;}
 .step p{margin-top:8px;font-size:13.5px;line-height:1.6;color:var(--muted-dark);}
 
-/* ---------- PRICING / TRAINING OPTIONS ---------- */
+/* ---------- pricing / training options ---------- */
 .price-grid{display:grid;gap:24px;margin-top:52px;}
 @media(min-width:800px){.price-grid{grid-template-columns:repeat(3,1fr);}}
 .price-card{background:var(--ink-2);border:1px solid var(--line-dark);padding:32px 28px;display:flex;flex-direction:column;}
@@ -276,7 +276,7 @@ section{padding-block:88px;position:relative;}
 .price-card ul{margin:16px 0 0;padding-left:18px;font-size:13.5px;line-height:1.7;color:var(--text-dark);}
 .price-card .btn{margin-top:24px;align-self:flex-start;}
 
-/* ---------- FORM ---------- */
+/* ---------- form ---------- */
 form.site-form{display:grid;gap:16px;grid-template-columns:1fr 1fr;}
 form.site-form .full{grid-column:1/-1;}
 @media(max-width:560px){form.site-form{grid-template-columns:1fr;}form.site-form .full{grid-column:auto;}}
@@ -293,7 +293,7 @@ form.site-form .full{grid-column:1/-1;}
 .form-note.show{display:block;}
 .form-note.error{color:#ffb4a8;}
 
-/* ---------- CONTACT INFO ---------- */
+/* ---------- contact info ---------- */
 .info-block{margin-top:26px;}
 .info-row{display:flex;gap:14px;padding-block:14px;border-top:1px solid var(--line-dark);font-size:14.5px;}
 .info-row .k{width:120px;flex:0 0 auto;color:var(--muted-dark);text-transform:uppercase;font-size:11.5px;letter-spacing:0.1em;padding-top:2px;}
@@ -302,7 +302,7 @@ form.site-form .full{grid-column:1/-1;}
 .social-row a:hover{border-color:var(--gold);color:var(--gold);}
 .social-row a svg{width:18px;height:18px;}
 
-/* ---------- SHOP ---------- */
+/* ---------- shop ---------- */
 .shop-toolbar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;margin-top:16px;}
 .shop-grid{display:grid;gap:22px;margin-top:36px;grid-template-columns:repeat(2,minmax(0,1fr));}
 @media(min-width:700px){.shop-grid{grid-template-columns:repeat(3,minmax(0,1fr));}}
@@ -319,7 +319,7 @@ form.site-form .full{grid-column:1/-1;}
 .size-chip.sold{opacity:0.3;text-decoration:line-through;}
 
 
-/* ---------- FOOTER ---------- */
+/* ---------- footer ---------- */
 footer{background:#050505;padding-block:56px 34px;border-top:1px solid var(--line-dark);}
 .foot-top{display:grid;gap:36px;}
 @media(min-width:800px){.foot-top{grid-template-columns:1.2fr 1fr 1fr;}}
@@ -334,7 +334,7 @@ footer{background:#050505;padding-block:56px 34px;border-top:1px solid var(--lin
 
 ::selection{background:var(--gold);color:var(--ink);}
 
-/* ---------- SMALL-PHONE SAFETY (prevents sideways scrolling) ---------- */
+/* ---------- small-phone safety (prevents sideways scrolling) ---------- */
 html,body{overflow-x:clip;}
 .product-body h4,.coach-body h4,.alum-body h4{overflow-wrap:anywhere;}
 .hero-content,.page-hero-content{min-width:0;}

@@ -1,5 +1,5 @@
 // wct hoops site script
-// handles the nav, hero video, contact form and the shop email stuff
+// handles the nav, hero video, contact form and the shop email links
 (function () {
   "use strict";
 
@@ -188,8 +188,8 @@
     });
   });
 
-  // shop: orders go through email for now, no checkout yet
-  // this is where orders get sent. change it here if we get a separate merch email
+  // shop: the email links on the shop page use this address.
+  // change it here if we get a separate merch email
   var SHOP_EMAIL = "rans@wcthoops.com";
   var shopEmailLink = document.getElementById("shopEmailLink");
   if (shopEmailLink) {
