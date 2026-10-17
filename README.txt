@@ -11,5 +11,5 @@ TO EDIT:
 
 BEFORE EDITING: copy the whole folder as a backup.
 
-TO DO BEFORE LAUNCH: the Instagram / TikTok / Facebook icons still link to "#". Replace each href="#" with the real link.
+SOCIAL: only Instagram is linked (https://www.instagram.com/wcthoops/). To change it, search the .html files for instagram.com.
 The contact form only works once the site is on Netlify (turn on Forms > form detection, and add a notification email).
