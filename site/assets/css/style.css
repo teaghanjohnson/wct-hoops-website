@@ -316,7 +316,7 @@ form.site-form .full{grid-column:1/-1;}
 .product-price{font-size:14px;color:var(--gold-light);font-weight:700;}
 .size-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;}
 .size-chip{border:1px solid var(--line-dark);border-radius:4px;padding:4px 9px;font-size:11.5px;font-weight:700;cursor:default;background:transparent;color:var(--paper);}
-.size-chip.sold{opacity:0.3;text-decoration:line-through;}
+.size-chip.sold{opacity:0.3;}
 
 
 /* ---------- footer ---------- */

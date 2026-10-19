@@ -3,7 +3,6 @@
   "use strict";
 
   var CART_KEY = "wctCart";
-  var LOW_STOCK = 3; // show how many are left once a size gets this low
   var TEE_PAIR_DISCOUNT = 10; // display only, the server applies the real discount
 
   // must match slug() in netlify/lib/stripe.js exactly
@@ -106,7 +105,7 @@
       var soldOut = !available(key) || n === 0;
       btn.disabled = soldOut;
       btn.classList.toggle("sold", soldOut);
-      btn.textContent = btn.dataset.size + (!soldOut && n !== null && n <= LOW_STOCK ? " (" + n + " left)" : "");
+      btn.textContent = btn.dataset.size;
       btn.setAttribute("aria-label", soldOut
         ? btn.dataset.name + ", size " + btn.dataset.size + ", sold out"
         : "Add " + btn.dataset.name + ", size " + btn.dataset.size + " to cart");
