@@ -29,7 +29,6 @@ const CATALOG = [
   { name: "Build While You Fly Tee — Black", category: "tee", price: 30, sizes: { S: 0, M: 0, L: 5, XL: 5 } },
   { name: "Kente Logo Tee — Ash Grey", category: "tee", price: 30, sizes: { XL: 1 } },
   { name: "Kente Logo Tee — White", category: "tee", price: 30, sizes: { XL: 1 } },
-  { name: "WCT Classic Camp Tee — Orange (Yr 1)", category: "tee", price: 30, sizes: { XL: 1 } },
   { name: "OG Logo Tee — Dreadlock Silhouette", category: "tee", price: 30, sizes: { L: 1 } },
   { name: "WCT x BUBBLE24 Winter Camp Tee — Coach", category: "tee", price: 30, sizes: { L: 1 } },
   { name: "WCT x BUBBLE24 Winter Camp Tee — Simple Things", category: "tee", price: 30, sizes: { S: 1 } },
