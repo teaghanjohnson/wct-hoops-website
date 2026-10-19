@@ -67,6 +67,44 @@
     showToast.t = setTimeout(function () { toast.classList.remove("show"); }, 2200);
   }
 
+  // front and back photos: cards with a data-img-back get a front / back switch on the photo.
+  // tapping a side shows it, and on a desktop hovering the photo shows the back
+  document.querySelectorAll(".product-card[data-img-back]").forEach(function (card) {
+    var media = card.querySelector(".product-media");
+    var front = media && media.querySelector("img");
+    if (!front) return;
+    var back = document.createElement("img");
+    back.className = "img-back";
+    back.src = card.dataset.imgBack;
+    back.alt = card.dataset.name + ", back";
+    back.loading = "lazy";
+    media.appendChild(back);
+
+    var sw = document.createElement("div");
+    sw.className = "side-switch";
+    sw.setAttribute("role", "group");
+    sw.setAttribute("aria-label", "Show front or back of " + card.dataset.name);
+    ["Front", "Back"].forEach(function (label) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.textContent = label;
+      b.setAttribute("aria-pressed", label === "Front" ? "true" : "false");
+      b.addEventListener("click", function () { showSide(label === "Back"); });
+      sw.appendChild(b);
+    });
+    media.appendChild(sw);
+
+    function showSide(isBack) {
+      media.classList.toggle("show-back", isBack);
+      sw.children[0].setAttribute("aria-pressed", isBack ? "false" : "true");
+      sw.children[1].setAttribute("aria-pressed", isBack ? "true" : "false");
+    }
+    if (window.matchMedia && window.matchMedia("(hover: hover)").matches) {
+      media.addEventListener("mouseenter", function () { showSide(true); });
+      media.addEventListener("mouseleave", function () { showSide(false); });
+    }
+  });
+
   // turn each size chip into a button that adds that size to the cart
   var chips = [];
   document.querySelectorAll(".product-card").forEach(function (card) {
