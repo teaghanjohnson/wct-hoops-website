@@ -1,5 +1,6 @@
-// wct hoops site script
-// handles the nav, hero video, contact form and the shop email links
+// wct hoops site script, loaded on every page
+// handles the phone menu, the home page video, the contact form, the back buttons and the shop email links
+// you should not need to edit this file, except the shop email address near the bottom
 (function () {
   "use strict";
 
@@ -34,7 +35,7 @@
 
   // back button for when a link drops you in the middle of another page
   // (like "view upcoming camps" going to bookings.html#camps). we save where
-  // you came from in sessionStorage so the button survives a refresh
+  // you came from in the browser's session storage so the button survives a refresh
   var PAGE_LABELS = {
     "index.html": "Home",
     "": "Home",
@@ -176,7 +177,7 @@
   });
 
   // shop: the email links on the shop page use this address.
-  // change it here if we get a separate merch email
+  // change it here if wct gets a separate merch email (keep the quotes)
   var SHOP_EMAIL = "rans@wcthoops.com";
   var shopEmailLink = document.getElementById("shopEmailLink");
   if (shopEmailLink) {

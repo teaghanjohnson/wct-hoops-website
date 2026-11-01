@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!--
+  everything inside head is setup visitors never see on the page itself:
+  the browser tab title, the description google shows in search results, fonts and style files.
+  the title and description text are safe to edit. leave the rest as is.
+-->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="About WCT Hoops, the North Vancouver basketball academy. Our story, our philosophy and what we stand for.">
@@ -12,7 +17,17 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<!--
+  page: the roots (about.html). ransford's story, how wct started and what it stands for
+  to change any words on this page, find them below and type over them.
+  leave everything inside the < > brackets alone unless a note tells you otherwise.
+  notes like this one are hidden from visitors.
+-->
 
+<!--
+  top menu bar. this same menu is copied on every page, so if you add or rename
+  a page, update the menu on every page. class="active" marks the page you are on.
+-->
 <nav class="nav" id="siteNav">
   <div class="wrap nav-row">
     <a href="index.html" class="brand">
@@ -36,6 +51,7 @@
       </button>
     </div>
   </div>
+  <!-- the menu that opens on phones when the three line button is tapped -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="about.html">The Roots</a>
     <a href="bookings.html">The Work</a>
@@ -47,6 +63,7 @@
   </div>
 </nav>
 
+<!-- banner at the top of the page: background photo, small gold label, big title and a short intro -->
 <header class="page-hero">
   <div class="page-hero-media"><img src="assets/img/candid-3.jpg" alt="WCT team walking onto the court"></div>
   <div class="wrap page-hero-content">
@@ -56,7 +73,7 @@
   </div>
 </header>
 
-<!-- founder intro -->
+<!-- founder intro: ransford's photo and a short introduction -->
 <section class="on-dark">
   <div class="wrap">
     <div class="split">
@@ -75,7 +92,7 @@
   </div>
 </section>
 
-<!-- the roots -->
+<!-- the roots: how wct started in 2020. other pages link straight here -->
 <section class="on-ink2" id="roots">
   <div class="wrap">
     <div class="eyebrow">Why WCT Was Started</div>
@@ -93,7 +110,7 @@
   </div>
 </section>
 
-<!-- pathways + what wct means -->
+<!-- pathways and what wct means (light background section) -->
 <section class="on-paper">
   <div class="wrap">
     <div class="eyebrow">Our Purpose</div>
@@ -113,7 +130,7 @@
   </div>
 </section>
 
-<!-- the approach / values -->
+<!-- the approach: the wct values, one box per value -->
 <section class="on-dark">
   <div class="wrap">
     <div class="eyebrow">The WCT Approach</div>
@@ -148,7 +165,7 @@
   </div>
 </section>
 
-<!-- ransford's journey timeline -->
+<!-- ransford's journey timeline. the "read his full story" button on the coaches page links straight here -->
 <section class="on-ink2" id="journey">
   <div class="wrap">
     <div class="eyebrow">Ransford's Journey</div>
@@ -188,7 +205,7 @@
   </div>
 </section>
 
-<!-- the wct standard -->
+<!-- the wct standard: closing message -->
 <section class="on-dark standard">
   <div class="wrap">
     <div class="quote-mark">&ldquo;</div>
@@ -203,6 +220,10 @@
   </div>
 </section>
 
+<!--
+  bottom of the page with links, phone and email. it is the same on every page,
+  so if you change something here, change it on the other pages too.
+-->
 <footer>
   <div class="wrap">
     <div class="foot-top">
@@ -230,6 +251,7 @@
   </div>
 </footer>
 
+<!-- runs the phone menu, the home page video, the contact form and the back buttons. keep this line -->
 <script src="assets/js/main.js"></script>
 </body>
 </html>

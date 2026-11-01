@@ -1,0 +1,220 @@
+how to add player pages and upcoming camps
+==========================================
+
+this folder holds two finished features that are not on the website yet.
+
+  1. player pages: clicking a player on the proof page (alumni.html) opens a page
+     with their story, timeline, quote and photos.
+  2. upcoming camps: camp cards with dates, ages, price, spots left and a register
+     button on the work page (bookings.html).
+
+what is in this folder
+
+  guide.txt              this guide
+  player_template.html   the player page. you make one copy for each player
+  card_snippets.html     the clickable player card and the camp cards, ready to copy and paste
+
+the styles (how these pieces look) are already in the site at
+site/assets/css/player-and-camp-cards.css. you switch them on page by page
+in step 1 of each part below.
+
+
+before you start
+----------------
+
+  * use a plain text editor. vs code is free and the easiest (code.visualstudio.com).
+    textedit works too, but first go to format, then make plain text.
+  * the pages you edit are in the site folder. files in this folder are only the
+    templates you copy from.
+  * anything in [square brackets] is a placeholder. replace the brackets and the
+    words inside them with the real info.
+  * only change the words between the tags. in <h4>Isaac Jack</h4> you change
+    Isaac Jack and leave <h4> and </h4> alone.
+  * every spot you need to edit is marked with a note that says edit:
+    use cmd + f (mac) or ctrl + f (windows) to jump between them.
+  * made a mistake? cmd + z (or ctrl + z) undoes it.
+  * to check your work, double click the html file in the site folder and it opens
+    in your browser. refresh the browser after each save.
+
+
+part 1: player pages
+--------------------
+
+step 1: switch on the styles (only once)
+
+  open site/alumni.html. near the top, find this line:
+
+      <link rel="stylesheet" href="assets/css/style.css">
+
+  right under it, paste this line and save:
+
+      <link rel="stylesheet" href="assets/css/player-and-camp-cards.css">
+
+
+step 2: make the player's page
+
+  1. copy future_features/player_template.html into the site folder.
+  2. rename the copy after the player: player_ then first and last name, all
+     lowercase, with underscores instead of spaces. for example:
+
+         player_isaac_jack.html
+
+  3. put the player's photos in site/assets/img.
+  4. open the new page and search for edit: to find each spot to fill in:
+     the browser tab title, photos, name, level, current team, intro, quick facts,
+     the journey timeline, the quote and the gallery photos.
+  5. at the bottom, the previous and next links point to the players before and
+     after this one. if they do not have a page yet, change the link to
+     alumni.html or delete that line.
+  6. save.
+
+
+step 3: make their card clickable
+
+  in site/alumni.html, find the player's current card. it is four lines long and
+  looks like this:
+
+      <div class="alum-card">
+        <div class="alum-media"><img src="assets/img/alum-isaac.jpg" alt="Isaac Jack"></div>
+        <div class="alum-body"><h4>Isaac Jack</h4><div class="school">Edmonton Stingers · Pro</div><div class="meta">Forward &middot; ex-Pacific University '26</div></div>
+      </div>
+
+  1. open future_features/card_snippets.html and copy everything between
+     "player card: start copying here" and "player card: stop copying here".
+  2. in alumni.html, select those four lines of the old card, delete them and
+     paste the new card in the same spot.
+  3. fill it in. the old card already had the photo, name, school and year, so
+     copy those across. the href is the file name from step 2.
+
+  here is isaac's card filled in, as an example:
+
+      <a href="player_isaac_jack.html" class="alum-card" aria-label="View Isaac Jack's journey">
+        <div class="alum-media">
+          <img src="assets/img/alum-isaac.jpg" alt="Isaac Jack">
+          <span class="alum-level">Pro</span>
+        </div>
+        <div class="alum-body">
+          <h4>Isaac Jack</h4>
+          <div class="school">Edmonton Stingers · Pro</div>
+          <div class="meta">Forward &middot; ex-Pacific University '26</div>
+          <div class="alum-cta">View Journey <span>→</span></div>
+        </div>
+      </a>
+
+
+step 4: check it
+
+  double click site/alumni.html. the card should lift and turn gold when you
+  hover over it, and clicking it should open the player's page. on that page,
+  the back to the proof button should bring you back.
+
+
+good to know
+
+  * only switch a card to the clickable version once that player's page exists.
+    otherwise visitors click into a page not found.
+  * cards with and without pages can sit side by side in the grid.
+  * adding a brand new player: do steps 2 to 4, but paste the new card wherever
+    you want them in the grid instead of replacing an old one. then update the
+    featured alumni number near the bottom of alumni.html.
+
+
+part 2: upcoming camps
+----------------------
+
+step 1: switch on the styles (only once)
+
+  open site/bookings.html and add the same line under the style.css line,
+  exactly like part 1, step 1:
+
+      <link rel="stylesheet" href="assets/css/player-and-camp-cards.css">
+
+
+step 2: paste the camp section
+
+  1. open future_features/card_snippets.html and copy everything between
+     "camp section: start copying here" and "camp section: stop copying here".
+  2. in bookings.html, find this note:
+
+         <!-- booking process: the four numbered steps -->
+
+  3. click at the start of that line, press enter to make an empty line above it,
+     and paste the camp section there. it now sits between the training options
+     and the booking process.
+
+
+step 3: fill in the camp cards
+
+  the section comes with two example cards:
+
+    registration open: gold label, dates, price, spots left bar and a register button
+    coming soon: outline label, dates tba and a get notified button
+
+  keep the one you need and delete the other (each card starts with a note that
+  says camp card: and ends with its closing </div> before the next card).
+  for more camps, copy a whole card and paste it right after the last one,
+  still inside the section.
+
+  fill in each spot marked edit:
+
+    photo          a file in site/assets/img
+    date box       short month (AUG) and the days (12–15)
+    name and description
+    ages, time and where
+    spots left     the two numbers, plus the bar width. the bar width is how full the
+                   camp is: 40 of 50 spots taken is 80%, so width:80%. delete the whole
+                   spots left block if you do not want to show it.
+    price
+    register link  where sign ups happen: a google form link, a stripe payment link
+                   made for that camp, or contact.html
+
+
+step 4: point the camp buttons at the new section
+
+  the camps box above the new section still has a button that goes to the contact
+  page. in bookings.html, find:
+
+      <a href="contact.html" class="btn btn-solid">View Upcoming Camps →</a>
+
+  and change contact.html to #upcoming-camps so it becomes:
+
+      <a href="#upcoming-camps" class="btn btn-solid">View Upcoming Camps →</a>
+
+  on the home page (site/index.html), the view upcoming camps link goes to
+  bookings.html#camps. change it to bookings.html#upcoming-camps so it lands right
+  on the camp cards.
+
+
+step 5: keep it up to date
+
+  * a coming soon camp opens: delete its card and paste a registration open card.
+  * a camp fills up: change the label text to Sold Out and change class="camp-status open"
+    to class="camp-status soon". change the register button text or remove it.
+  * a camp is over: delete its card.
+  * no camps planned: leave one coming soon card up, or delete the whole section.
+
+
+part 3: putting your changes online
+-----------------------------------
+
+editing the files on your computer does not change the live website. once your
+changes look right in the browser, publish them the way README.txt describes
+(the to publish part), or send the updated site folder to your developer.
+
+
+if something looks wrong
+------------------------
+
+  the new cards look plain or unstyled
+    the link line from step 1 is missing on that page, or has a typo.
+
+  a photo does not show
+    the file name after src= has to match the file in site/assets/img exactly,
+    including .jpg versus .jpeg and capital letters.
+
+  clicking a card says page not found
+    the file name after href= does not match the player page in the site folder.
+
+  everything below what you pasted looks broken
+    part of a block was missed when copying. undo, then copy again from the
+    start copying here note all the way to the stop copying here note.

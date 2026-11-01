@@ -1,0 +1,181 @@
+/*
+   wct hoops styles for player cards, player journey pages and camp cards
+
+   this file controls how the new pieces look (colours, sizes, spacing).
+   you usually never need to touch it. to change words or photos, edit the html files instead.
+
+   how to turn it on: on any page that uses these pieces, add the link line from guide.txt
+   (in the future_features folder) inside the <head>, right under the line that loads style.css.
+
+   about the colours: anything written as var(...) is a colour nickname set up at the top
+   of style.css, so the whole site stays consistent. gold is the wct gold, ink is the near
+   black background and paper is the off white text.
+*/
+
+
+/*
+   1. clickable player card (used on the proof page, alumni.html)
+   builds on the existing player card look and makes the whole card a link to that player's journey page
+*/
+
+/* the card itself. transition makes the hover effect smooth instead of jumpy */
+a.alum-card{
+  display:flex;
+  flex-direction:column;
+  color:inherit;
+  transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+/*
+   when a mouse hovers the card (or someone tabs to it with the keyboard)
+   the card lifts slightly, gets a gold outline and the photo goes to full colour
+*/
+a.alum-card:hover,
+a.alum-card:focus-visible{
+  transform:translateY(-6px);
+  border-color:var(--gold);
+  box-shadow:0 18px 40px rgba(0,0,0,0.55);
+  outline:none;
+}
+a.alum-card:hover .alum-media img,
+a.alum-card:focus-visible .alum-media img{
+  filter:grayscale(0%) contrast(1.05);
+  transform:scale(1.04);
+}
+.alum-media{position:relative;}
+.alum-media img{transition:filter .4s ease, transform .5s ease;}
+
+/* the small rounded label in the top left corner of the photo (like pro or ncaa d1) */
+.alum-level{
+  position:absolute;top:12px;left:12px;
+  font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--gold-light);
+  border:1px solid rgba(227,194,115,0.5);
+  background:rgba(8,8,9,0.6);
+  padding:4px 10px;border-radius:999px;
+}
+
+/* the view journey line at the bottom of each card */
+.alum-body{display:flex;flex-direction:column;flex:1;}
+.alum-cta{
+  margin-top:auto;padding-top:12px;
+  border-top:1px solid var(--line-dark);
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:11.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--paper);
+}
+.alum-cta span{color:var(--gold);}
+.alum-body .meta{margin-bottom:14px;}
+a.alum-card:hover .alum-cta{color:var(--gold-light);}
+
+
+/* 2. player journey page (one page per player) */
+
+/*
+   top section: big photo on the left, name and facts on the right.
+   on phones these stack, photo on top and text underneath
+*/
+.player-hero{position:relative;background:#000;overflow:hidden;padding-top:calc(var(--nav-h) + 36px);padding-bottom:72px;}
+.player-hero-bg{position:absolute;inset:0;}
+.player-hero-bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(60%) brightness(0.35);}
+.player-hero .wrap{position:relative;}
+.player-hero-grid{display:grid;gap:36px;align-items:end;margin-top:30px;}
+@media(min-width:880px){.player-hero-grid{grid-template-columns:minmax(0,400px) 1fr;gap:64px;}}
+
+.player-photo{position:relative;aspect-ratio:3/4;overflow:hidden;border:1px solid rgba(243,241,236,0.2);}
+.player-photo img{width:100%;height:100%;object-fit:cover;}
+.player-photo .frame{position:absolute;inset:14px;border:1px solid rgba(243,241,236,0.35);pointer-events:none;}
+
+.player-hero .eyebrow{color:var(--gold-light);}
+.player-hero h1{font-size:clamp(48px,8vw,104px);line-height:0.95;text-transform:uppercase;color:var(--paper);margin-top:16px;}
+.player-team{margin-top:16px;font-size:18px;font-weight:600;color:var(--gold-light);}
+.player-intro{margin-top:16px;max-width:54ch;font-size:16px;line-height:1.65;color:var(--muted-dark);}
+
+/*
+   the row of quick facts (position, height, hometown and so on).
+   it fits as many per row as the screen allows
+*/
+.player-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));margin-top:26px;border-top:1px solid var(--line-dark);}
+.player-facts div{padding:16px 16px 0 0;display:flex;flex-direction:column;gap:4px;}
+.player-facts span{font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted-dark);}
+.player-facts b{font-family:"Anton";font-weight:400;font-size:22px;text-transform:uppercase;}
+
+/* the journey timeline: a gold line with one dot per milestone */
+.journey{display:grid;gap:56px;}
+@media(min-width:880px){.journey{grid-template-columns:1fr 2fr;}}
+.journey h2{font-size:clamp(32px,4.6vw,52px);text-transform:uppercase;margin-top:14px;}
+.timeline{list-style:none;margin:0;padding:0;}
+.timeline li{position:relative;padding:0 0 40px 40px;}
+/* the vertical gold line */
+.timeline li::before{content:"";position:absolute;left:6px;top:20px;bottom:0;width:2px;background:rgba(198,154,61,0.35);}
+/* the dot */
+.timeline li::after{content:"";position:absolute;left:0;top:6px;width:14px;height:14px;border-radius:999px;border:2px solid var(--gold);background:var(--ink);box-sizing:border-box;}
+/* the last milestone (where they are now) gets a solid gold dot and no line below it */
+.timeline li:last-child{padding-bottom:0;}
+.timeline li:last-child::before{display:none;}
+.timeline li:last-child::after{background:var(--gold);box-shadow:0 0 0 5px rgba(198,154,61,0.2);}
+.timeline .year{font-family:"Anton";font-size:26px;color:var(--gold);}
+.timeline h3{font-family:"Work Sans";font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:0.03em;margin-top:6px;}
+.timeline p{margin-top:6px;font-size:14.5px;line-height:1.65;color:var(--muted-dark);max-width:56ch;}
+
+/* photo gallery: photos side by side on big screens, stacked on phones */
+.player-gallery{display:grid;gap:16px;margin-top:32px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+.player-gallery img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(35%) contrast(1.05);}
+
+/* previous and next player links at the bottom of the page */
+.player-pager{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:22px 0;border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);}
+.player-pager a{display:flex;flex-direction:column;gap:4px;}
+.player-pager a:last-child{align-items:flex-end;text-align:right;}
+.player-pager small{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted-dark);}
+.player-pager b{font-family:"Anton";font-weight:400;font-size:20px;text-transform:uppercase;}
+.player-pager a:hover b{color:var(--gold-light);}
+
+
+/* 3. camp cards (used on the work page, bookings.html) */
+
+/* grid of camp cards: one per row on phones, two per row on bigger screens */
+.camp-grid{display:grid;gap:24px;margin-top:40px;}
+@media(min-width:800px){.camp-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+
+.camp-card{background:var(--ink-2);border:1px solid var(--line-dark);display:flex;flex-direction:column;}
+.camp-media{position:relative;aspect-ratio:16/9;overflow:hidden;}
+.camp-media img{width:100%;height:100%;object-fit:cover;filter:grayscale(45%) contrast(1.08);}
+
+/*
+   status label in the top left corner of the photo.
+   gold filled means registration is open. outline only means coming soon or sold out
+*/
+.camp-status{position:absolute;top:14px;left:14px;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:5px 11px;border-radius:999px;}
+.camp-status.open{background:var(--gold);color:var(--ink);}
+.camp-status.soon{color:var(--gold-light);border:1px solid rgba(227,194,115,0.5);background:rgba(8,8,9,0.6);}
+
+/* the little date box in the bottom right corner of the photo */
+.camp-date{position:absolute;right:14px;bottom:14px;background:rgba(8,8,9,0.82);border:1px solid rgba(243,241,236,0.2);padding:10px 14px;display:flex;flex-direction:column;align-items:center;min-width:76px;}
+.camp-date small{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-light);}
+.camp-date b{font-family:"Anton";font-weight:400;font-size:30px;line-height:1.05;color:var(--paper);}
+
+.camp-body{padding:28px;display:flex;flex-direction:column;gap:16px;flex:1;}
+.camp-body h3{font-size:28px;text-transform:uppercase;}
+.camp-body p{margin:0;font-size:14px;line-height:1.6;color:var(--muted-dark);}
+
+/* the three info boxes: ages, time and where */
+.camp-info{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);}
+.camp-info div{padding:14px 0 14px 16px;display:flex;flex-direction:column;gap:4px;border-left:1px solid var(--line-dark);}
+.camp-info div:first-child{padding-left:0;border-left:0;}
+.camp-info span{font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted-dark);}
+.camp-info b{font-size:14px;font-weight:600;}
+
+/*
+   spots left bar. the gold part's width is set in the html (the width:68% part).
+   change that number to show how full the camp is
+*/
+.camp-spots{display:flex;flex-direction:column;gap:8px;}
+.camp-spots .label{display:flex;justify-content:space-between;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;}
+.camp-spots .label span:last-child{color:var(--muted-dark);}
+.camp-bar{height:4px;background:rgba(243,241,236,0.12);border-radius:999px;overflow:hidden;}
+.camp-bar div{height:100%;background:var(--gold);}
+
+/* bottom row: price on the left, button on the right */
+.camp-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:auto;}
+.camp-price{font-family:"Anton";font-size:32px;color:var(--gold);}
+.camp-price span{font-family:"Work Sans";font-size:13px;font-weight:600;color:var(--muted-dark);}

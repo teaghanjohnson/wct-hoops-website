@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!--
+  everything inside head is setup visitors never see on the page itself:
+  the browser tab title, the description google shows in search results, fonts and style files.
+  the title and description text are safe to edit. leave the rest as is.
+-->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Book 1-on-1 training, semi-private sessions, camps and club teams with WCT Hoops in North Vancouver, BC.">
@@ -12,7 +17,17 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<!--
+  page: the work (bookings.html). training options, prices, how booking works and the cancellation policy
+  to change any words on this page, find them below and type over them.
+  leave everything inside the < > brackets alone unless a note tells you otherwise.
+  notes like this one are hidden from visitors.
+-->
 
+<!--
+  top menu bar. this same menu is copied on every page, so if you add or rename
+  a page, update the menu on every page. class="active" marks the page you are on.
+-->
 <nav class="nav" id="siteNav">
   <div class="wrap nav-row">
     <a href="index.html" class="brand">
@@ -32,6 +47,7 @@
       <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
+  <!-- the menu that opens on phones when the three line button is tapped -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="about.html">The Roots</a>
     <a href="bookings.html">The Work</a>
@@ -43,6 +59,7 @@
   </div>
 </nav>
 
+<!-- banner at the top of the page: background photo, small gold label, big title and a short intro -->
 <header class="page-hero">
   <div class="page-hero-media"><img src="assets/img/candid-1.jpg" alt="Player training at WCT"></div>
   <div class="wrap page-hero-content">
@@ -52,10 +69,14 @@
   </div>
 </header>
 
-<!-- training options -->
+<!-- training options. the id training lets other pages link straight to this section -->
 <section class="on-dark" id="training">
   <div class="wrap">
     <div class="eyebrow">Choose Your Training</div>
+    <!--
+      each box below is one training option: title, price, description, bullet points and a book now button.
+      change the words and prices directly. each bullet point is one <li> line.
+    -->
     <div class="price-grid">
       <div class="price-card">
         <h3>1-on-1 Training</h3>
@@ -84,6 +105,11 @@
         <p class="muted" style="font-size:12.5px;">Discounted 5- and 10-session packages available.</p>
         <a href="contact.html" class="btn btn-solid">Book Now →</a>
       </div>
+      <!--
+        camps box. the id camps lets the home page link straight here.
+        when real camp dates are ready, follow part 2 of guide.txt in the future_features folder
+        to add an upcoming camps section with camp cards right under the training options.
+      -->
       <div class="price-card" id="camps">
         <h3>Camps &amp; Workshops</h3>
         <div class="price">Varies <span>by camp</span></div>
@@ -101,7 +127,7 @@
   </div>
 </section>
 
-<!-- booking process -->
+<!-- booking process: the four numbered steps -->
 <section class="on-ink2">
   <div class="wrap">
     <div class="eyebrow">The Booking Process</div>
@@ -133,7 +159,7 @@
   </div>
 </section>
 
-<!-- cancellation + contact -->
+<!-- cancellation policy and contact (light background section) -->
 <section class="on-paper">
   <div class="wrap">
     <div class="split">
@@ -156,6 +182,7 @@
   </div>
 </section>
 
+<!-- closing message -->
 <section class="on-dark standard">
   <div class="wrap">
     <h2>Ready to get to work?</h2>
@@ -164,6 +191,10 @@
   </div>
 </section>
 
+<!--
+  bottom of the page with links, phone and email. it is the same on every page,
+  so if you change something here, change it on the other pages too.
+-->
 <footer>
   <div class="wrap">
     <div class="foot-top">
@@ -191,6 +222,7 @@
   </div>
 </footer>
 
+<!-- runs the phone menu, the home page video, the contact form and the back buttons. keep this line -->
 <script src="assets/js/main.js"></script>
 </body>
 </html>

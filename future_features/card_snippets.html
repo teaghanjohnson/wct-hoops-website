@@ -1,0 +1,135 @@
+<!--
+  copy and paste cards
+
+  this file is not a page on the website. think of it as a parts box holding the new cards.
+  you copy a card from here and paste it into a real page.
+  the full step by step instructions are in guide.txt in this same folder.
+
+  anything in [square brackets] is something you fill in.
+-->
+
+
+<!--
+  part 1: clickable player card
+  goes on the proof page (alumni.html), inside the grid of player cards.
+  part 1 of guide.txt shows exactly where and how.
+-->
+
+<!-- player card: start copying here -->
+<!-- edit: href is the player's page file name. the aria label is read out loud for visitors using a screen reader -->
+<a href="player_[first]_[last].html" class="alum-card" aria-label="View [Player Name]'s journey">
+  <div class="alum-media">
+    <!-- edit: photo file name (in site/assets/img) and the player's name -->
+    <img src="assets/img/alum-[name].jpg" alt="[Player Name]">
+    <!-- edit: small label on the photo, like pro, ncaa d1, ncaa d2, u sports, ccaa or prep -->
+    <span class="alum-level">[Level]</span>
+  </div>
+  <div class="alum-body">
+    <h4>[Player Name]</h4>                                      <!-- edit: name -->
+    <div class="school">[School or Team · League]</div>          <!-- edit: where they play -->
+    <div class="meta">[Position] &middot; [Year]</div>            <!-- edit: position and year -->
+    <div class="alum-cta">View Journey <span>→</span></div>       <!-- leave as is -->
+  </div>
+</a>
+<!-- player card: stop copying here -->
+
+<!--
+  note: only use this clickable card once the player's page exists.
+  until then keep their old card, otherwise visitors click into a page not found.
+-->
+
+<!--
+  note: when you add a new player, also bump the featured alumni number
+  near the bottom of alumni.html
+-->
+
+
+
+<!--
+  part 2: upcoming camps
+  goes on the work page (bookings.html), right under the training options.
+  paste the whole camp section below once, then keep one camp card inside it for each camp.
+  there are two versions of the card:
+  registration open: gold label, price, spots left bar and a register button
+  coming soon: outline label, dates tba and a get notified button
+  part 2 of guide.txt walks through it step by step.
+-->
+
+<!-- camp section: start copying here -->
+<section class="on-dark" id="upcoming-camps">
+  <div class="wrap">
+    <div class="eyebrow">Upcoming Camps</div>
+
+    <!-- all camp cards go between this line... -->
+    <div class="camp-grid">
+
+      <!-- camp card: registration open -->
+      <div class="camp-card">
+        <div class="camp-media">
+          <!-- edit: camp photo and a short description of it -->
+          <img src="assets/img/work-camps.jpg" alt="Players at a WCT camp">
+          <!-- status label. open makes it gold -->
+          <span class="camp-status open">Registration Open</span>
+          <!-- edit: the month (short, like aug) and the days (like 12 to 15) -->
+          <div class="camp-date"><small>[AUG]</small><b>[12–15]</b></div>
+        </div>
+        <div class="camp-body">
+          <h3>[The WCT Classic]</h3>                                     <!-- edit: camp name -->
+          <p>[One or two lines about what this camp focuses on.]</p>     <!-- edit: description -->
+          <div class="camp-info">
+            <div><span>Ages</span><b>[Grades 6–12]</b></div>            <!-- edit -->
+            <div><span>Time</span><b>[9am–3pm]</b></div>                <!-- edit -->
+            <div><span>Where</span><b>[North Vancouver]</b></div>       <!-- edit -->
+          </div>
+          <!--
+            spots left. change the two numbers in the text.
+            the gold bar's length is the width:68% part. set it to roughly how full the camp is,
+            for example 40 of 50 spots taken is 80%.
+            delete this whole camp spots block if you do not want it.
+          -->
+          <div class="camp-spots">
+            <div class="label"><span>[X] spots left</span><span>of [Y]</span></div>
+            <div class="camp-bar"><div style="width:68%;"></div></div>
+          </div>
+          <div class="camp-foot">
+            <div class="camp-price">$[Price] <span>CAD</span></div>        <!-- edit: price -->
+            <!-- edit: href is where the register button goes (a sign up form link, a stripe payment link, or contact.html) -->
+            <a href="contact.html" class="btn btn-solid">Register →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- camp card: coming soon -->
+      <div class="camp-card">
+        <div class="camp-media">
+          <img src="assets/img/action-1.jpg" alt="Player in action at WCT">   <!-- edit: photo -->
+          <!-- status label. soon gives it an outline. the text can also say sold out -->
+          <span class="camp-status soon">Coming Soon</span>
+          <div class="camp-date"><small>Dates</small><b>TBA</b></div>
+        </div>
+        <div class="camp-body">
+          <h3>[Camp Name]</h3>                                          <!-- edit -->
+          <p>[One or two lines about what this camp focuses on.]</p>    <!-- edit -->
+          <div class="camp-info">
+            <div><span>Ages</span><b>[Grades]</b></div>
+            <div><span>Time</span><b>TBA</b></div>
+            <div><span>Where</span><b>North Vancouver</b></div>
+          </div>
+          <p>Dates, pricing and availability posted soon.</p>
+          <div class="camp-foot">
+            <div class="camp-price" style="color:var(--muted-dark);">—</div>
+            <a href="contact.html" class="btn btn-outline">Get Notified →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- ...and this line. -->
+  </div>
+</section>
+<!-- camp section: stop copying here -->
+
+<!--
+  tip: when a coming soon camp opens, delete its card and paste a fresh
+  registration open card in its place.
+-->

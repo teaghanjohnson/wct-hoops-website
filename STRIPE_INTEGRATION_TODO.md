@@ -8,7 +8,7 @@ The following values are placeholders and must be updated before going live.
 
 **Files containing placeholders:**
 - [netlify/functions/create-checkout-session.js](netlify/functions/create-checkout-session.js)
-- [scripts/seed-stripe-test-products.js](scripts/seed-stripe-test-products.js)
+- [scripts/seed-stripe-products.js](scripts/seed-stripe-products.js)
 - [.env.example](.env.example) (copy to `.env`)
 
 | Field | Current Value | What to Set |
@@ -64,7 +64,7 @@ site/assets/js/shop-cart.js                 size buttons, sold out state, cart d
 site/assets/css/shop-cart.css               cart and sold out styles
 site/assets/js/clear-cart.js                empties the cart on the success page
 site/shop-success.html                      order confirmed page
-scripts/seed-stripe-test-products.js        creates test products and prices
+scripts/seed-stripe-products.js             creates the products and prices (test or live)
 .env.example                                env var names
 ```
 
@@ -99,7 +99,7 @@ scripts/seed-stripe-test-products.js        creates test products and prices
 
 ## Going live
 
-1. In the client's Stripe account, create the products and prices (same names, lookup keys and metadata). The seed script only runs on test keys, so either copy test products to live in the dashboard or temporarily adapt the script.
+1. Publish the site first so the product photos are online. Update the stock counts in `scripts/seed-stripe-products.js` to the real numbers, put the client's `sk_live_` key in `.env`, run `npm run seed:live` and type `yes`. Then put the `sk_test_` key back in `.env`.
 2. In Netlify > Site configuration > Environment variables, set `STRIPE_SECRET_KEY` (live) and `STRIPE_WEBHOOK_SECRET`.
 3. In Stripe > Developers > Webhooks, add `https://wcthoops.com/.netlify/functions/stripe-webhook` with the events `checkout.session.completed` and `checkout.session.async_payment_succeeded`.
 4. Deploy with `npx netlify deploy --prod` (drag-and-drop doesn't deploy functions).

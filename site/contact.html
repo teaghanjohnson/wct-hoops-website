@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!--
+  everything inside head is setup visitors never see on the page itself:
+  the browser tab title, the description google shows in search results, fonts and style files.
+  the title and description text are safe to edit. leave the rest as is.
+-->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Contact WCT Hoops in North Vancouver, BC. Reach out about training, camps and club teams by form, phone or email.">
@@ -12,7 +17,17 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<!--
+  page: contact (contact.html). contact details and the contact form
+  to change any words on this page, find them below and type over them.
+  leave everything inside the < > brackets alone unless a note tells you otherwise.
+  notes like this one are hidden from visitors.
+-->
 
+<!--
+  top menu bar. this same menu is copied on every page, so if you add or rename
+  a page, update the menu on every page. class="active" marks the page you are on.
+-->
 <nav class="nav" id="siteNav">
   <div class="wrap nav-row">
     <a href="index.html" class="brand"><img src="assets/img/logo-circle.png" alt="WCT Hoops logo"><span class="brand-word">WCT HOOPS</span></a>
@@ -29,6 +44,7 @@
       <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
+  <!-- the menu that opens on phones when the three line button is tapped -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="about.html">The Roots</a><a href="bookings.html">The Work</a><a href="alumni.html">The Proof</a>
     <a href="coaches.html">Coaches</a><a href="shop.html">Shop</a><a href="contact.html">Contact</a>
@@ -36,6 +52,7 @@
   </div>
 </nav>
 
+<!-- banner at the top of the page: background photo, small gold label, big title and a short intro -->
 <header class="page-hero" style="padding-bottom:40px;">
   <div class="page-hero-media"><img src="assets/img/candid-5.jpg" alt="WCT team huddle"></div>
   <div class="wrap page-hero-content">
@@ -47,6 +64,7 @@
 
 <section class="on-dark">
   <div class="wrap">
+    <!-- left side: phone, email, location and instagram. right side: the contact form -->
     <div class="split" style="align-items:start;">
       <div>
         <div class="eyebrow">Get In Touch</div>
@@ -63,6 +81,11 @@
 
       <div>
         <div class="eyebrow">Tell Us About Your Game</div>
+        <!--
+          contact form. netlify collects the answers. to get them by email, turn on form notifications
+          in the netlify dashboard (forms, then notifications). the two hidden lines right under this
+          catch spam bots, so leave them alone. you can rename the labels and placeholder text freely.
+        -->
         <form id="joinForm" class="site-form" name="join" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-ajax-form style="margin-top:20px;">
           <input type="hidden" name="form-name" value="join">
           <p hidden><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
@@ -74,6 +97,7 @@
           <div class="field"><label for="f-grade">Player Age / Grade</label><input id="f-grade" name="grade" placeholder="e.g. Grade 10"></div>
           <div class="field full">
             <label for="f-interest">What Are You Interested In?</label>
+            <!-- the dropdown choices. each <option> line is one choice. add, remove or rename them freely -->
             <select id="f-interest" name="interest">
               <option>1-on-1 Training</option>
               <option>Semi-Private Training</option>
@@ -93,6 +117,10 @@
   </div>
 </section>
 
+<!--
+  bottom of the page with links, phone and email. it is the same on every page,
+  so if you change something here, change it on the other pages too.
+-->
 <footer>
   <div class="wrap">
     <div class="foot-top">
@@ -116,6 +144,7 @@
   </div>
 </footer>
 
+<!-- runs the phone menu, the home page video, the contact form and the back buttons. keep this line -->
 <script src="assets/js/main.js"></script>
 </body>
 </html>

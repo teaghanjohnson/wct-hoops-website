@@ -1,4 +1,6 @@
-// wct shop cart: size chips add to the cart, stock comes from stripe, checkout goes to stripe
+// wct shop cart: size buttons add to the cart, stock comes from stripe, checkout goes to stripe
+// you should not need to edit this file. products, prices and stock are managed in stripe
+// and in the product cards on shop.html
 (function () {
   "use strict";
 
@@ -67,7 +69,7 @@
     showToast.t = setTimeout(function () { toast.classList.remove("show"); }, 2200);
   }
 
-  // front and back photos: cards with a data-img-back get a front / back switch on the photo.
+  // front and back photos: cards that list a back photo get a front and back switch on the photo.
   // tapping a side shows it, and on a desktop hovering the photo shows the back
   document.querySelectorAll(".product-card[data-img-back]").forEach(function (card) {
     var media = card.querySelector(".product-media");

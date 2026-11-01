@@ -1,10 +1,12 @@
-/* shop cart: clickable size chips, sold out cards, cart drawer and toast */
+/* shop cart styles: the size buttons, the sold out cover, the cart panel and the little pop up message */
 
+/* size buttons on each product card */
 .product-card .size-chip { cursor: pointer; font: inherit; font-size: 11.5px; font-weight: 700; }
 .product-card .size-chip:hover:not(:disabled) { border-color: var(--gold); color: var(--gold-light); }
 .product-card .size-chip:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 .product-card .size-chip:disabled { cursor: not-allowed; }
 
+/* dark sold out cover over the photo once every size is gone */
 .product-card.is-sold-out .product-media { position: relative; }
 .product-card.is-sold-out .product-media::after {
   content: "Sold Out"; position: absolute; inset: 0; display: grid; place-items: center;
@@ -12,6 +14,7 @@
   font-family: "Anton", sans-serif; font-size: 22px; letter-spacing: 0.08em; text-transform: uppercase;
 }
 
+/* the round cart button that floats in the bottom right corner */
 .cart-toggle {
   position: fixed; z-index: 1000;
   right: calc(20px + env(safe-area-inset-right, 0px));
@@ -22,6 +25,7 @@
 }
 .cart-toggle:focus-visible { outline: 2px solid var(--paper); outline-offset: 3px; }
 
+/* the cart panel that slides in from the right */
 .cart-panel {
   position: fixed; z-index: 1001; top: 0; right: 0; bottom: 0; width: min(400px, 100%);
   display: flex; flex-direction: column; background: var(--ink-2); color: var(--paper);
@@ -49,6 +53,7 @@
 .cart-checkout { justify-content: center; }
 .cart-checkout:disabled { opacity: 0.5; cursor: not-allowed; }
 
+/* the little message that pops up after adding an item */
 .cart-toast {
   position: fixed; z-index: 1002; left: 50%;
   bottom: calc(84px + env(safe-area-inset-bottom, 0px));

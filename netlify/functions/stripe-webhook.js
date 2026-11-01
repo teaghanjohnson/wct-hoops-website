@@ -1,4 +1,5 @@
-// post /.netlify/functions/stripe-webhook (stripe calls this after a payment)
+// payment received: stripe calls this on netlify's servers after a customer pays.
+// it needs the webhook signing secret saved in netlify's environment variables.
 // lowers the stock on each price that was bought
 
 const { stripe } = require("../lib/stripe");

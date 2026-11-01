@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!--
+  everything inside head is setup visitors never see on the page itself:
+  the browser tab title, the description google shows in search results, fonts and style files.
+  the title and description text are safe to edit. leave the rest as is.
+-->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Meet WCT Hoops alumni and see where our athletes have gone on to play.">
@@ -10,6 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<!-- a few extra styles used only on this page -->
 <style>
   .more-alumni{display:grid;gap:0;margin-top:20px;border-top:1px solid var(--line-dark);}
   .more-alumni .row{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--line-dark);font-size:15px;}
@@ -17,7 +23,17 @@
 </style>
 </head>
 <body>
+<!--
+  page: the proof (alumni.html). the players who came through wct
+  to change any words on this page, find them below and type over them.
+  leave everything inside the < > brackets alone unless a note tells you otherwise.
+  notes like this one are hidden from visitors.
+-->
 
+<!--
+  top menu bar. this same menu is copied on every page, so if you add or rename
+  a page, update the menu on every page. class="active" marks the page you are on.
+-->
 <nav class="nav" id="siteNav">
   <div class="wrap nav-row">
     <a href="index.html" class="brand"><img src="assets/img/logo-circle.png" alt="WCT Hoops logo"><span class="brand-word">WCT HOOPS</span></a>
@@ -34,6 +50,7 @@
       <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
+  <!-- the menu that opens on phones when the three line button is tapped -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="about.html">The Roots</a><a href="bookings.html">The Work</a><a href="alumni.html">The Proof</a>
     <a href="coaches.html">Coaches</a><a href="shop.html">Shop</a><a href="contact.html">Contact</a>
@@ -41,6 +58,7 @@
   </div>
 </nav>
 
+<!-- banner at the top of the page: background photo, small gold label, big title and a short intro -->
 <header class="page-hero">
   <div class="page-hero-media"><img src="assets/img/action-3.jpg" alt="WCT alumni action shot"></div>
   <div class="wrap page-hero-content">
@@ -50,9 +68,16 @@
   </div>
 </header>
 
+<!-- featured alumni: one card per player, plus the numbers row underneath -->
 <section class="on-dark">
   <div class="wrap">
     <div class="eyebrow">Featured Alumni</div>
+    <!--
+      each player is one card block, from its opening <div> line to its closing </div> line.
+      to add a player, copy a whole card, paste it where you want them to show up, then change the photo, name, school and year.
+      cards show up in the same order as in this file. photos live in the assets/img folder.
+      to make the cards clickable later, follow part 1 of guide.txt in the future_features folder.
+    -->
     <div class="proof-grid" style="margin-top:36px;">
       <div class="alum-card">
         <div class="alum-media"><img src="assets/img/alum-isaac.jpg" alt="Isaac Jack"></div>
@@ -124,6 +149,7 @@
       </div>
     </div>
 
+    <!-- the numbers row. when you add or remove a player, update the featured alumni number by hand -->
     <div class="proof-stats">
       <div class="stat"><b>2020</b><span>Founded</span></div>
       <div class="stat"><b>17</b><span>Featured Alumni</span></div>
@@ -133,6 +159,7 @@
   </div>
 </section>
 
+<!-- closing message with the start training button -->
 <section class="on-dark standard">
   <div class="wrap">
     <h2>Your name could be next.</h2>
@@ -141,6 +168,10 @@
   </div>
 </section>
 
+<!--
+  bottom of the page with links, phone and email. it is the same on every page,
+  so if you change something here, change it on the other pages too.
+-->
 <footer>
   <div class="wrap">
     <div class="foot-top">
@@ -164,6 +195,7 @@
   </div>
 </footer>
 
+<!-- runs the phone menu, the home page video, the contact form and the back buttons. keep this line -->
 <script src="assets/js/main.js"></script>
 </body>
 </html>

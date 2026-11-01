@@ -1,14 +1,17 @@
-// post /.netlify/functions/create-checkout-session
+// checkout: this runs on netlify's servers (not in the visitor's browser) when a customer presses checkout.
+// it checks the cart against stripe, adds shipping and the tee deal, and sends back the stripe payment page link.
 // body: { items: [{ key: "<lookup_key>", qty }] }
 // returns { url } for the stripe hosted checkout page
 
 const { stripe, json } = require("../lib/stripe");
 
-// two tees cost fifty dollars instead of sixty, so each pair takes ten dollars off (in cents)
+// tee deal: two tees cost fifty dollars instead of sixty, so each pair takes ten dollars off (in cents).
+// if the deal changes, also update the tee deal banner on shop.html
 const TEE_PAIR_DISCOUNT_CENTS = 1000;
 const MAX_QTY_PER_ITEM = 10;
 
-// placeholder rates in cents (cad). swap in the client's real rates before launch
+// shipping choices shown at checkout. amounts are in cents, so 1500 means $15.00 cad.
+// these are placeholder rates. swap in the client's real rates before launch
 const SHIPPING_OPTIONS = [
   {
     shipping_rate_data: {
@@ -106,7 +109,7 @@ exports.handler = async (event) => {
       discounts = [{ coupon: coupon.id }];
     }
 
-    // netlify sets URL on its own when deployed
+    // netlify sets the site address on its own when deployed
     const siteUrl = process.env.SITE_URL || process.env.URL;
 
     const session = await stripe.checkout.sessions.create({

@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "dev": "netlify dev",
-    "seed:test": "node scripts/seed-stripe-test-products.js"
+    "seed:test": "node scripts/seed-stripe-products.js",
+    "seed:live": "node scripts/seed-stripe-products.js --live"
   },
   "dependencies": {
     "stripe": "^23.0.0"

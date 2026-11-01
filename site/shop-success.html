@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!--
+  everything inside head is setup visitors never see on the page itself:
+  the browser tab title, the description google shows in search results, fonts and style files.
+  the title and description text are safe to edit. leave the rest as is.
+-->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
@@ -12,7 +17,17 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<!--
+  page: order confirmed. stripe sends customers here after they pay
+  to change any words on this page, find them below and type over them.
+  leave everything inside the < > brackets alone unless a note tells you otherwise.
+  notes like this one are hidden from visitors.
+-->
 
+<!--
+  top menu bar. this same menu is copied on every page, so if you add or rename
+  a page, update the menu on every page. class="active" marks the page you are on.
+-->
 <nav class="nav" id="siteNav">
   <div class="wrap nav-row">
     <a href="index.html" class="brand"><img src="assets/img/logo-circle.png" alt="WCT Hoops logo"><span class="brand-word">WCT HOOPS</span></a>
@@ -29,6 +44,7 @@
       <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
+  <!-- the menu that opens on phones when the three line button is tapped -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="about.html">The Roots</a><a href="bookings.html">The Work</a><a href="alumni.html">The Proof</a>
     <a href="coaches.html">Coaches</a><a href="shop.html">Shop</a><a href="contact.html">Contact</a>
@@ -36,6 +52,7 @@
   </div>
 </nav>
 
+<!-- banner at the top of the page: background photo, small gold label, big title and a short intro -->
 <header class="page-hero">
   <div class="page-hero-media"><img src="assets/img/candid-5.jpg" alt="WCT team huddle"></div>
   <div class="wrap page-hero-content">
@@ -49,6 +66,10 @@
   </div>
 </header>
 
+<!--
+  bottom of the page with links, phone and email. it is the same on every page,
+  so if you change something here, change it on the other pages too.
+-->
 <footer>
   <div class="wrap">
     <div class="foot-top">
@@ -72,7 +93,9 @@
   </div>
 </footer>
 
+<!-- runs the phone menu, the home page video, the contact form and the back buttons. keep this line -->
 <script src="assets/js/main.js"></script>
+<!-- empties the cart now that the order is paid -->
 <script src="assets/js/clear-cart.js"></script>
 </body>
 </html>

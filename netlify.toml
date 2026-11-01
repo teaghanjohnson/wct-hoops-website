@@ -1,5 +1,8 @@
+# netlify settings. leave these alone
 [build]
+  # the folder netlify puts online
   publish = "site"
+  # the server code for the shop (stock, checkout and the stripe webhook)
   functions = "netlify/functions"
 
 [functions]

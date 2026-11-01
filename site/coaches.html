@@ -1,224 +1,390 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Meet the WCT Hoops coaching staff in North Vancouver, BC: their backgrounds, experience and roles with the program.">
-<link rel="icon" href="assets/img/logo-circle.png" type="image/png">
-<title>Meet The Coaches — WCT Hoops</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-
-<nav class="nav" id="siteNav">
-  <div class="wrap nav-row">
-    <a href="index.html" class="brand"><img src="assets/img/logo-circle.png" alt="WCT Hoops logo"><span class="brand-word">WCT HOOPS</span></a>
-    <div class="nav-links">
-      <a href="about.html">The Roots</a>
-      <a href="bookings.html">The Work</a>
-      <a href="alumni.html">The Proof</a>
-      <a href="coaches.html" class="active">Coaches</a>
-      <a href="shop.html">Shop</a>
-    </div>
-    <div class="nav-right">
-      <div class="nav-socials"><a href="https://www.instagram.com/wcthoops/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a></div>
-      <a href="contact.html" class="nav-cta">Contact</a>
-      <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    </div>
-  </div>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="about.html">The Roots</a><a href="bookings.html">The Work</a><a href="alumni.html">The Proof</a>
-    <a href="coaches.html">Coaches</a><a href="shop.html">Shop</a><a href="contact.html">Contact</a>
-    <div class="mm-socials"><a href="https://www.instagram.com/wcthoops/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a></div>
-  </div>
-</nav>
-
-<header class="page-hero">
-  <div class="page-hero-media"><img src="assets/img/candid-4.jpg" alt="WCT coaching staff on court"></div>
-  <div class="wrap page-hero-content">
-    <div class="eyebrow">Meet The Coaches</div>
-    <h1>The Team.</h1>
-    <p>Coaches and skills trainers who've played and competed at the professional, NCAA, U SPORTS, and national-team levels &mdash; now putting that experience into WCT's athletes.</p>
-  </div>
-</header>
-
-<section class="on-dark">
-  <div class="wrap">
-    <div class="split" style="align-items:center;margin-bottom:60px;">
-      <div class="split-media"><img src="assets/img/action-6.jpg" alt="Ransford Brempong"><div class="frame"></div></div>
-      <div>
-        <div class="eyebrow">Head Coach</div>
-        <h2 style="margin-top:14px;">Ransford<br>Brempong.</h2>
-        <p class="muted" style="font-size:13px;letter-spacing:0.06em;text-transform:uppercase;margin-top:6px;">Owner / Founder / Head Coach</p>
-        <p>20+ years in the game &mdash; NCAA Division I, professional basketball in Germany and Holland, and Team Canada. Now building the next generation at WCT.</p>
-        <a href="about.html#journey" class="btn btn-outline" style="margin-top:16px;">Read His Full Story →</a>
-      </div>
-    </div>
-
-    <div class="eyebrow">Coaches &amp; Skills Trainers</div>
-    <div class="coach-grid">
-
-      <div class="coach-card">
-        <div class="coach-media"><img src="assets/img/coach-jarryn.jpg" alt="Jarryn Skeete"></div>
-        <div class="coach-body">
-          <h4>Jarryn Skeete</h4>
-          <div class="role">Co-Founder</div>
-          <ul>
-            <li>Wasatch Academy '11</li>
-            <li>Utah State Championship '11</li>
-            <li>University at Buffalo 2012&ndash;2016</li>
-            <li>Back-to-back MAC champion</li>
-            <li>Top 8 all-time 3PT made</li>
-            <li>4-year pro</li>
-            <li>Nike UPLAY EYBL 2020, 2021</li>
-            <li>Arizona State Men's Basketball &mdash; Player Personnel Analytical Assistant 2023&ndash;2025</li>
-            <li>Eneos Sunflowers &mdash; Lead Assistant Coach 2025&ndash;present</li>
-            <li>Japan National Team Assistant Coach 2026</li>
-          </ul>
+  <head>
+  <!--
+    everything inside head is setup visitors never see on the page itself:
+    the browser tab title, the description google shows in search results, fonts and style files.
+    the title and description text are safe to edit. leave the rest as is.
+  -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="Meet the WCT Hoops coaching staff in North Vancouver, BC: their backgrounds, experience and roles with the program."
+    />
+    <link rel="icon" href="assets/img/logo-circle.png" type="image/png" />
+    <title>Meet The Coaches — WCT Hoops</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+  <!--
+    page: coaches (coaches.html). the head coach and the rest of the coaching staff
+    to change any words on this page, find them below and type over them.
+    leave everything inside the < > brackets alone unless a note tells you otherwise.
+    notes like this one are hidden from visitors.
+  -->
+    <!--
+      top menu bar. this same menu is copied on every page, so if you add or rename
+      a page, update the menu on every page. class="active" marks the page you are on.
+    -->
+    <nav class="nav" id="siteNav">
+      <div class="wrap nav-row">
+        <a href="index.html" class="brand"
+          ><img src="assets/img/logo-circle.png" alt="WCT Hoops logo" /><span
+            class="brand-word"
+            >WCT HOOPS</span
+          ></a
+        >
+        <div class="nav-links">
+          <a href="about.html">The Roots</a>
+          <a href="bookings.html">The Work</a>
+          <a href="alumni.html">The Proof</a>
+          <a href="coaches.html" class="active">Coaches</a>
+          <a href="shop.html">Shop</a>
+        </div>
+        <div class="nav-right">
+          <div class="nav-socials">
+            <a
+              href="https://www.instagram.com/wcthoops/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle
+                  cx="17.5"
+                  cy="6.5"
+                  r="1"
+                  fill="currentColor"
+                  stroke="none"
+                ></circle></svg
+            ></a>
+          </div>
+          <a href="contact.html" class="nav-cta">Contact</a>
+          <button
+            class="burger"
+            id="burgerBtn"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
         </div>
       </div>
-
-      <div class="coach-card">
-        <div class="coach-media"><img src="assets/img/coach-justace.jpg" alt="Justace Byam"></div>
-        <div class="coach-body">
-          <h4>Justace Byam</h4>
-          <div class="role">Coach &middot; Skills Trainer</div>
-          <ul>
-            <li>2016 &amp; 2017 Nike EYBL (CIA Bounce)</li>
-            <li>Wasatch Academy '19</li>
-            <li>2x Utah All-State Selection</li>
-            <li>5-Year U SPORTS Guard &mdash; Windsor &amp; MacEwan</li>
-            <li>MacEwan single-game assist record holder</li>
-          </ul>
+      <!-- the menu that opens on phones when the three line button is tapped -->
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="about.html">The Roots</a><a href="bookings.html">The Work</a
+        ><a href="alumni.html">The Proof</a> <a href="coaches.html">Coaches</a
+        ><a href="shop.html">Shop</a><a href="contact.html">Contact</a>
+        <div class="mm-socials">
+          <a
+            href="https://www.instagram.com/wcthoops/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle
+                cx="17.5"
+                cy="6.5"
+                r="1"
+                fill="currentColor"
+                stroke="none"
+              ></circle></svg
+          ></a>
         </div>
       </div>
+    </nav>
 
-      <div class="coach-card">
-        <div class="coach-media"><img src="assets/img/coach-grant.jpg" alt="Grant Audu"></div>
-        <div class="coach-body">
-          <h4>Grant Audu</h4>
-          <div class="role">Coach &middot; Skills Trainer</div>
-          <ul>
-            <li>2 years with WCT</li>
-            <li>2017&ndash;22 UBC Men's Basketball Guard</li>
-            <li>2019&ndash;20 U SPORTS Final 8 Bronze Medalist</li>
-            <li>2021&ndash;22 Canada West 1st Team All-Star</li>
-            <li>2022&ndash;23 Uusikaupunki Korihait</li>
-            <li>2024&ndash;25 Team Canada 3x3</li>
-            <li>2024 FIBA 3x3 AmeriCup Bronze Medalist</li>
-            <li>2025 Lugano Casapol 3x3</li>
-            <li>2026 Royce Tel Aviv 3x3</li>
-          </ul>
+    <!-- banner at the top of the page: background photo, small gold label, big title and a short intro -->
+    <header class="page-hero">
+      <div class="page-hero-media">
+        <img src="assets/img/candid-4.jpg" alt="WCT coaching staff on court" />
+      </div>
+      <div class="wrap page-hero-content">
+        <div class="eyebrow">Meet The Coaches</div>
+        <h1>The Team.</h1>
+        <p>
+          Coaches and skills trainers who've played and competed at the
+          professional, NCAA, U SPORTS, and national-team levels &mdash; now
+          putting that experience into WCT's athletes.
+        </p>
+      </div>
+    </header>
+
+    <section class="on-dark">
+      <div class="wrap">
+        <!-- head coach: ransford's photo and short bio -->
+        <div class="split" style="align-items: center; margin-bottom: 60px">
+          <div class="split-media">
+            <img src="assets/img/action-6.jpg" alt="Ransford Brempong" />
+            <div class="frame"></div>
+          </div>
+          <div>
+            <div class="eyebrow">Head Coach</div>
+            <h2 style="margin-top: 14px">Ransford<br />Brempong.</h2>
+            <p
+              class="muted"
+              style="
+                font-size: 13px;
+                letter-spacing: 0.06em;
+                text-transform: uppercase;
+                margin-top: 6px;
+              "
+            >
+              Owner / Founder / Head Coach
+            </p>
+            <p>
+              20+ years in the game &mdash; NCAA Division I, professional
+              basketball in Germany and Holland, and Team Canada. Now building
+              the next generation at WCT.
+            </p>
+            <a
+              href="about.html#journey"
+              class="btn btn-outline"
+              style="margin-top: 16px"
+              >Read His Full Story →</a
+            >
+          </div>
+        </div>
+
+        <div class="eyebrow">Coaches &amp; Skills Trainers</div>
+        <!--
+          one card per coach. to add a coach, copy a whole card block, paste it where you want them,
+          then change the photo file, name, role and bullet points. each bullet point is one <li> line.
+          to remove a coach, delete their whole card.
+        -->
+        <div class="coach-grid">
+          <div class="coach-card">
+            <div class="coach-media">
+              <img src="assets/img/coach-jarryn.jpg" alt="Jarryn Skeete" />
+            </div>
+            <div class="coach-body">
+              <h4>Jarryn Skeete</h4>
+              <div class="role">Co-Founder</div>
+              <ul>
+                <li>Wasatch Academy '11</li>
+                <li>Utah State Championship '11</li>
+                <li>University at Buffalo 2012&ndash;2016</li>
+                <li>Back-to-back MAC champion</li>
+                <li>Top 8 all-time 3PT made</li>
+                <li>4-year pro</li>
+                <li>Nike UPLAY EYBL 2020, 2021</li>
+                <li>
+                  Arizona State Men's Basketball &mdash; Player Personnel
+                  Analytical Assistant 2023&ndash;2025
+                </li>
+                <li>
+                  Eneos Sunflowers &mdash; Lead Assistant Coach
+                  2025&ndash;present
+                </li>
+                <li>Japan National Team Assistant Coach 2026</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="coach-card">
+            <div class="coach-media">
+              <img src="assets/img/coach-justace.jpg" alt="Justace Byam" />
+            </div>
+            <div class="coach-body">
+              <h4>Justace Byam</h4>
+              <div class="role">Coach &middot; Skills Trainer</div>
+              <ul>
+                <li>2016 &amp; 2017 Nike EYBL (CIA Bounce)</li>
+                <li>Wasatch Academy '19</li>
+                <li>2x Utah All-State Selection</li>
+                <li>5-Year U SPORTS Guard &mdash; Windsor &amp; MacEwan</li>
+                <li>MacEwan single-game assist record holder</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="coach-card">
+            <div class="coach-media">
+              <img src="assets/img/coach-grant.jpg" alt="Grant Audu" />
+            </div>
+            <div class="coach-body">
+              <h4>Grant Audu</h4>
+              <div class="role">Coach &middot; Skills Trainer</div>
+              <ul>
+                <li>2 years with WCT</li>
+                <li>2017&ndash;22 UBC Men's Basketball Guard</li>
+                <li>2019&ndash;20 U SPORTS Final 8 Bronze Medalist</li>
+                <li>2021&ndash;22 Canada West 1st Team All-Star</li>
+                <li>2022&ndash;23 Uusikaupunki Korihait</li>
+                <li>2024&ndash;25 Team Canada 3x3</li>
+                <li>2024 FIBA 3x3 AmeriCup Bronze Medalist</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="coach-card">
+            <div class="coach-media">
+              <img src="assets/img/coach-matt.jpg" alt="Matt Carrion" />
+            </div>
+            <div class="coach-body">
+              <h4>Matt Carrion</h4>
+              <div class="role">Coach &middot; Administrative Assistant</div>
+              <ul>
+                <li>7 years with WCT</li>
+                <li>University of Washington Graduate Assistant</li>
+                <li>3 yrs Asst. Video Coordinator, Vancouver Bandits</li>
+                <li>2 yrs Assistant Coach, Douglas College</li>
+                <li>Assistant Coach, BC Summer Games</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="coach-card">
+            <div class="coach-media">
+              <img src="assets/img/coach-luis.jpg" alt="Luis Sanchez" />
+            </div>
+            <div class="coach-body">
+              <h4>Luis Sanchez</h4>
+              <div class="role">Coach</div>
+              <ul>
+                <li>4 years with WCT</li>
+                <li>SFU Manager</li>
+                <li>Asst. Video Coordinator, Vancouver Bandits</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="coach-card">
+            <div class="coach-media">
+              <img src="assets/img/coach-dj.jpg" alt="DJ Nunes" />
+            </div>
+            <div class="coach-body">
+              <h4>DJ Nunes</h4>
+              <div class="role">Coach &middot; Skills Trainer</div>
+              <ul>
+                <li>3 years with WCT</li>
+                <li>Head Coach, STA Senior Boys Basketball</li>
+                <li>Former OCAA athlete</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="coach-card">
+            <div class="coach-media">
+              <img src="assets/img/coach-jaden.jpg" alt="Jaden Narwal" />
+            </div>
+            <div class="coach-body">
+              <h4>Jaden Narwal</h4>
+              <div class="role">Coach</div>
+              <ul>
+                <li>3 years with WCT</li>
+                <li>BC Provincial Champion (Collingwood)</li>
+                <li>NYU Graduate</li>
+                <li>Assistant Coach, Collingwood Boys Basketball</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="coach-card">
+            <div class="coach-media">
+              <img src="assets/img/coach-rummi.jpg" alt="Rummi Kagande" />
+            </div>
+            <div class="coach-body">
+              <h4>Rummi Kagande</h4>
+              <div class="role">Coach &middot; Skills Trainer</div>
+              <ul>
+                <li>5 years with WCT</li>
+                <li>2x AA Provincial All-Star '18/'19</li>
+                <li>York University MBB '19/'20</li>
+                <li>Langara College MBB '23/'24</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="coach-card">
-        <div class="coach-media"><img src="assets/img/coach-matt.jpg" alt="Matt Carrion"></div>
-        <div class="coach-body">
-          <h4>Matt Carrion</h4>
-          <div class="role">Coach &middot; Administrative Assistant</div>
-          <ul>
-            <li>7 years with WCT</li>
-            <li>University of Washington Graduate Assistant</li>
-            <li>3 yrs Asst. Video Coordinator, Vancouver Bandits</li>
-            <li>2 yrs Assistant Coach, Douglas College</li>
-            <li>Assistant Coach, BC Summer Games</li>
-          </ul>
+    <!-- closing message -->
+    <section class="on-dark standard">
+      <div class="wrap">
+        <h2>Coached by people who've lived it.</h2>
+        <p>
+          Every coach on this staff has played or competed at a high level
+          &mdash; professional, NCAA, U SPORTS, or national team. That
+          experience is what they bring into every session.
+        </p>
+        <div class="hero-actions" style="margin-top: 30px">
+          <a href="bookings.html#training" class="btn btn-solid"
+            >Train With Us →</a
+          >
         </div>
       </div>
+    </section>
 
-      <div class="coach-card">
-        <div class="coach-media"><img src="assets/img/coach-luis.jpg" alt="Luis Sanchez"></div>
-        <div class="coach-body">
-          <h4>Luis Sanchez</h4>
-          <div class="role">Coach</div>
-          <ul>
-            <li>4 years with WCT</li>
-            <li>SFU Manager</li>
-            <li>Asst. Video Coordinator, Vancouver Bandits</li>
-          </ul>
+    <!--
+      bottom of the page with links, phone and email. it is the same on every page,
+      so if you change something here, change it on the other pages too.
+    -->
+    <footer>
+      <div class="wrap">
+        <div class="foot-top">
+          <div>
+            <div class="foot-brand">
+              <img src="assets/img/logo.jpg" alt="WCT Hoops logo" /><span
+                >WCT HOOPS</span
+              >
+            </div>
+            <p class="foot-tag">
+              West Coast Training &mdash; player development from the roots up.
+              Individual training, semi-private groups, and camps in North
+              Vancouver, BC.
+            </p>
+          </div>
+          <div class="foot-col">
+            <h5>Navigate</h5>
+            <a href="about.html">The Roots</a
+            ><a href="bookings.html">The Work</a
+            ><a href="alumni.html">The Proof</a>
+            <a href="coaches.html">Coaches</a><a href="shop.html">Shop</a
+            ><a href="contact.html">Contact</a>
+          </div>
+          <div class="foot-col">
+            <h5>Contact</h5>
+            <a href="tel:16044452890">(604) 445-2890</a>
+            <a href="mailto:rans@wcthoops.com">rans@wcthoops.com</a>
+            <p>North Vancouver, BC</p>
+          </div>
+        </div>
+        <div class="foot-bottom">
+          <span>&copy; 2026 WCT Hoops. All rights reserved.</span
+          ><span>Iron Sharpens Iron.</span>
         </div>
       </div>
+    </footer>
 
-      <div class="coach-card">
-        <div class="coach-media"><img src="assets/img/coach-dj.jpg" alt="DJ Nunes"></div>
-        <div class="coach-body">
-          <h4>DJ Nunes</h4>
-          <div class="role">Coach &middot; Skills Trainer</div>
-          <ul>
-            <li>3 years with WCT</li>
-            <li>Head Coach, STA Senior Boys Basketball</li>
-            <li>Former OCAA athlete</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="coach-card">
-        <div class="coach-media"><img src="assets/img/coach-jaden.jpg" alt="Jaden Narwal"></div>
-        <div class="coach-body">
-          <h4>Jaden Narwal</h4>
-          <div class="role">Coach</div>
-          <ul>
-            <li>3 years with WCT</li>
-            <li>BC Provincial Champion (Collingwood)</li>
-            <li>NYU Graduate</li>
-            <li>Assistant Coach, Collingwood Boys Basketball</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="coach-card">
-        <div class="coach-media"><img src="assets/img/coach-rummi.jpg" alt="Rummi Kagande"></div>
-        <div class="coach-body">
-          <h4>Rummi Kagande</h4>
-          <div class="role">Coach &middot; Skills Trainer</div>
-          <ul>
-            <li>5 years with WCT</li>
-            <li>2x AA Provincial All-Star '18/'19</li>
-            <li>York University MBB '19/'20</li>
-            <li>Langara College MBB '23/'24</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="on-dark standard">
-  <div class="wrap">
-    <h2>Coached by people who've lived it.</h2>
-    <p>Every coach on this staff has played or competed at a high level &mdash; professional, NCAA, U SPORTS, or national team. That experience is what they bring into every session.</p>
-    <div class="hero-actions" style="margin-top:30px;"><a href="bookings.html#training" class="btn btn-solid">Train With Us →</a></div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="foot-top">
-      <div>
-        <div class="foot-brand"><img src="assets/img/logo.jpg" alt="WCT Hoops logo"><span>WCT HOOPS</span></div>
-        <p class="foot-tag">West Coast Training &mdash; player development from the roots up. Individual training, semi-private groups, and camps in North Vancouver, BC.</p>
-      </div>
-      <div class="foot-col">
-        <h5>Navigate</h5>
-        <a href="about.html">The Roots</a><a href="bookings.html">The Work</a><a href="alumni.html">The Proof</a>
-        <a href="coaches.html">Coaches</a><a href="shop.html">Shop</a><a href="contact.html">Contact</a>
-      </div>
-      <div class="foot-col">
-        <h5>Contact</h5>
-        <a href="tel:16044452890">(604) 445-2890</a>
-        <a href="mailto:rans@wcthoops.com">rans@wcthoops.com</a>
-        <p>North Vancouver, BC</p>
-      </div>
-    </div>
-    <div class="foot-bottom"><span>&copy; 2026 WCT Hoops. All rights reserved.</span><span>Iron Sharpens Iron.</span></div>
-  </div>
-</footer>
-
-<script src="assets/js/main.js"></script>
-</body>
+    <!-- runs the phone menu, the home page video, the contact form and the back buttons. keep this line -->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>

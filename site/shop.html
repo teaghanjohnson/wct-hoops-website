@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!--
+  everything inside head is setup visitors never see on the page itself:
+  the browser tab title, the description google shows in search results, fonts and style files.
+  the title and description text are safe to edit. leave the rest as is.
+-->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="WCT Hoops merch: tees, crew necks and socks. Build your order, then email it to pick up in North Vancouver or have it shipped in Canada and the USA.">
+<meta name="description" content="WCT Hoops merch: tees, crew necks and socks. Order online and pick up free in North Vancouver or have it shipped in Canada and the USA.">
 <link rel="icon" href="assets/img/logo-circle.png" type="image/png">
 <title>Shop — WCT Hoops</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,13 +16,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/shop-cart.css">
+<!-- extra styles for the info banners on this page -->
 <style>
   .tbd-banner{background:var(--ink-2);border:1px dashed var(--line-dark);padding:16px 20px;font-size:13px;color:var(--muted-dark);line-height:1.6;margin-top:28px;}
   .tbd-banner b{color:var(--gold-light);}
 </style>
 </head>
 <body>
+<!--
+  page: shop (shop.html). merch with an online cart that checks out through stripe
+  to change any words on this page, find them below and type over them.
+  leave everything inside the < > brackets alone unless a note tells you otherwise.
+  notes like this one are hidden from visitors.
+-->
 
+<!--
+  top menu bar. this same menu is copied on every page, so if you add or rename
+  a page, update the menu on every page. class="active" marks the page you are on.
+-->
 <nav class="nav" id="siteNav">
   <div class="wrap nav-row">
     <a href="index.html" class="brand"><img src="assets/img/logo-circle.png" alt="WCT Hoops logo"><span class="brand-word">WCT HOOPS</span></a>
@@ -34,6 +50,7 @@
       <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
+  <!-- the menu that opens on phones when the three line button is tapped -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="about.html">The Roots</a><a href="bookings.html">The Work</a><a href="alumni.html">The Proof</a>
     <a href="coaches.html">Coaches</a><a href="shop.html">Shop</a><a href="contact.html">Contact</a>
@@ -41,6 +58,7 @@
   </div>
 </nav>
 
+<!-- banner at the top of the page: background photo, small gold label, big title and a short intro -->
 <header class="page-hero" style="padding-bottom:36px;">
   <div class="page-hero-media"><img src="assets/img/action-2.jpg" alt="WCT gear"></div>
   <div class="wrap page-hero-content">
@@ -56,14 +74,31 @@
       <div class="eyebrow" style="margin:0;">Gear</div>
     </div>
 
+    <!-- how to order banner. edit the words directly -->
     <div class="tbd-banner">
       <b>How to order:</b> tap a size to add it to your cart, then check out securely through Stripe. Choose shipping to Canada or the USA, or free pickup in North Vancouver, BC, at checkout. Questions? Email <a href="mailto:rans@wcthoops.com" style="color:var(--gold-light);text-decoration:underline;">rans@wcthoops.com</a>.
     </div>
 
+    <!-- tee deal banner. if the deal changes, also change it in the checkout code (netlify/functions) -->
     <div class="tbd-banner" style="border-style:solid;">
       <b>Tee deal:</b> $30 for 1 tee, or <b>$50 for any 2 tees</b>. Crew necks are $50 and socks are $20 (no bundle). The tee deal is applied automatically at checkout.
     </div>
 
+    <!--
+      every product is one card block below.
+
+      the name in data name must match the product name in stripe exactly, punctuation included,
+      or that item cannot be bought.
+      data price is the price shown on the card only. the price actually charged comes from stripe.
+      data category is tee, crew or socks. only tees count toward the 2 for $50 tee deal.
+      a card with a data img back photo gets a front and back switch on its photo.
+      each size is one size chip line. which sizes are sold out comes from stripe automatically,
+      so to restock or sell out a size, change its stock number in the stripe dashboard, not here.
+
+      to add a new product: create it in stripe first (same name, one price per size),
+      then copy a whole card here and change the name, photo, price and sizes.
+      to remove a product: delete its whole card here and archive it in stripe.
+    -->
     <div class="shop-grid" id="shopGrid">
       <div class="product-card" data-name="WCT Hoops Tee — Black" data-price="30" data-category="tee" data-img="assets/img/shop-black-front.jpg">
         <div class="product-media"><img src="assets/img/shop-black-front.jpg" alt="WCT Hoops Tee, Black"></div>
@@ -332,26 +367,32 @@
   </div>
 </section>
 
+<!-- how it works: four short steps. edit the words directly -->
 <section class="on-paper">
   <div class="wrap">
     <div class="eyebrow">How It Works</div>
     <div class="steps">
       <div class="step"><div class="n">01</div><h4>See It</h4><p>Browse the gear and pick what you like.</p></div>
-      <div class="step"><div class="n">02</div><h4>Check Sizes</h4><p>Available sizes are shown on each item &mdash; sold-out sizes are crossed out.</p></div>
-      <div class="step"><div class="n">03</div><h4>Email Your Order</h4><p>Send the items and how many of each size &mdash; 2 tees for $50, or $30 each.</p></div>
-      <div class="step"><div class="n">04</div><h4>Pick Up Or Ship</h4><p>We'll confirm by email. Pick up at 4382 Cove Cliff Rd., North Vancouver, BC, or ship to Canada/USA &mdash; shipping rates calculated for your order.</p></div>
+      <div class="step"><div class="n">02</div><h4>Pick Your Size</h4><p>Tap a size to add it to your cart. Sold out sizes are greyed out.</p></div>
+      <div class="step"><div class="n">03</div><h4>Check Out</h4><p>Pay securely through Stripe. Any 2 tees are $50, applied automatically.</p></div>
+      <div class="step"><div class="n">04</div><h4>Pick Up Or Ship</h4><p>Choose free pickup at 4382 Cove Cliff Rd., North Vancouver, BC, or shipping to Canada or the USA at checkout. Your receipt is emailed to you.</p></div>
     </div>
   </div>
 </section>
 
+<!-- questions section with the email button. the shop email address is set near the bottom of assets/js/main.js -->
 <section class="on-dark standard" id="inquiries">
   <div class="wrap">
-    <h2>Questions or ready to order?</h2>
-    <p>The online store isn't open yet. For orders, sizing, availability, or shipping questions, email us and we'll get back to you.</p>
+    <h2>Questions about your order?</h2>
+    <p>For sizing, availability, shipping, or anything about an order you've placed, email us and we'll get back to you.</p>
     <div class="hero-actions" style="margin-top:30px;"><a href="mailto:rans@wcthoops.com?subject=WCT%20Merch%20Inquiry" class="btn btn-solid" id="shopInquiryBtn">Email rans@wcthoops.com →</a></div>
   </div>
 </section>
 
+<!--
+  bottom of the page with links, phone and email. it is the same on every page,
+  so if you change something here, change it on the other pages too.
+-->
 <footer>
   <div class="wrap">
     <div class="foot-top">
@@ -375,7 +416,9 @@
   </div>
 </footer>
 
+<!-- runs the phone menu, the home page video, the contact form and the back buttons. keep this line -->
 <script src="assets/js/main.js"></script>
+<!-- runs the shop: size buttons, sold out labels, the cart and the checkout button -->
 <script src="assets/js/shop-cart.js" defer></script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+// stock: the shop page calls this to find out which sizes are still in stock.
+// it reads the stock number saved on each price in stripe.
 // get /.netlify/functions/inventory
 // returns { stock: { "<lookup_key>": count or null } } for every active price
 // null means no stock is set on that price, so it never sells out

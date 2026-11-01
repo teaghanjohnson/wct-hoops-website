@@ -1,264 +1,604 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="WCT Hoops is a North Vancouver basketball training academy: 1-on-1 and semi-private training, camps and club teams. Where Work Creates Transformation.">
-<link rel="icon" href="assets/img/logo-circle.png" type="image/png">
-<title>WCT Hoops — Where Work Creates Transformation</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-
-<nav class="nav" id="siteNav">
-  <div class="wrap nav-row">
-    <a href="index.html" class="brand">
-      <img src="assets/img/logo-circle.png" alt="WCT Hoops logo">
-      <span class="brand-word">WCT HOOPS</span>
-    </a>
-    <div class="nav-links">
-      <a href="about.html">The Roots</a>
-      <a href="bookings.html">The Work</a>
-      <a href="alumni.html">The Proof</a>
-      <a href="coaches.html">Coaches</a>
-      <a href="shop.html">Shop</a>
-    </div>
-    <div class="nav-right">
-      <div class="nav-socials">
-        <a href="https://www.instagram.com/wcthoops/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a>
-      </div>
-      <a href="contact.html" class="nav-cta">Contact</a>
-      <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="about.html">The Roots</a>
-    <a href="bookings.html">The Work</a>
-    <a href="alumni.html">The Proof</a>
-    <a href="coaches.html">Coaches</a>
-    <a href="shop.html">Shop</a>
-    <a href="contact.html">Contact</a>
-    <div class="mm-socials">
-      <a href="https://www.instagram.com/wcthoops/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a>
-    </div>
-  </div>
-</nav>
-
-<!-- hero -->
-<header class="hero" id="top">
-  <div class="hero-media">
-    <video id="heroVideo" autoplay muted loop playsinline poster="assets/img/hero-poster.jpg">
-      <source src="assets/video/hero.webm" type="video/webm">
-      <source src="assets/video/hero.mp4" type="video/mp4">
-    </video>
-  </div>
-  <button class="hero-video-toggle" id="heroSoundToggle" aria-label="Unmute video">&#128263;</button>
-  <div class="wrap">
-    <div class="hero-brandmark"><img src="assets/img/logo-circle.png" alt="WCT Hoops emblem"></div>
-    <div class="hero-content" id="heroContent">
-      <div class="hero-kicker">West Coast Training &nbsp;&middot;&nbsp; North Vancouver, BC</div>
-      <h1>Where Work<br>Creates <em>Transformation</em></h1>
-      <p class="hero-sub">Player development from the roots up. Individual training, semi-private groups, and camps built around one standard &mdash; no shortcuts, just work.</p>
-      <div class="ticker" aria-hidden="true">
-        <ul>
-          <li><span>&mdash;</span> Build While You Fly</li>
-          <li><span>&mdash;</span> Fundamentals Over Everything</li>
-          <li><span>&mdash;</span> Iron Sharpens Iron</li>
-          <li><span>&mdash;</span> Simple Things at a High Level</li>
-        </ul>
-      </div>
-      <div class="hero-actions">
-        <a href="bookings.html" class="btn btn-solid">Book Training</a>
-      </div>
-    </div>
-  </div>
-</header>
-
-<!-- philosophy -->
-<section class="on-dark" id="philosophy">
-  <div class="wrap">
-    <div class="eyebrow">The Philosophy</div>
-    <div class="split" style="margin-top:8px;">
-      <div>
-        <h2>Iron Sharpens<br>Iron.</h2>
-        <p>From day one, our vision has been simple: no days off in the gym. We intentionally curate a challenging environment where players are pushed by the coaches, teammates, and competition around them.</p>
-        <p>We believe growth happens when you're surrounded by people who demand more from you and refuse to let you settle &mdash; because transformation doesn't happen in comfort.</p>
-      </div>
-      <div class="split-media">
-        <img src="assets/img/philosophy.jpg" alt="WCT coach working with a player one-on-one">
-        <div class="frame"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- the work -->
-<section class="on-ink2" id="work">
-  <div class="wrap">
-    <div class="eyebrow">The Work</div>
-    <div class="work-head" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-end;margin-top:16px;">
-      <h2 style="font-size:clamp(30px,4.6vw,52px);text-transform:uppercase;max-width:14ch;">Training. Teams.<br>Camps.</h2>
-      <p class="muted" style="max-width:38ch;font-size:15.5px;line-height:1.6;">Every path is built around the same goal &mdash; create an environment that challenges you, develops you, and adds value to your journey.</p>
-    </div>
-    <div class="card-grid cols-2">
-      <div class="media-card">
-        <div class="media">
-          <img src="assets/img/work-training.jpg" alt="1-on-1 skills training session">
-          <div class="media-tag">From $130</div>
+  <head>
+  <!--
+    everything inside head is setup visitors never see on the page itself:
+    the browser tab title, the description google shows in search results, fonts and style files.
+    the title and description text are safe to edit. leave the rest as is.
+  -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta
+      name="description"
+      content="WCT Hoops is a North Vancouver basketball training academy: 1-on-1 and semi-private training, camps and club teams. Where Work Creates Transformation."
+    />
+    <link rel="icon" href="assets/img/logo-circle.png" type="image/png" />
+    <title>WCT Hoops — Where Work Creates Transformation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+  <!--
+    page: home (index.html). the first page people see
+    to change any words on this page, find them below and type over them.
+    leave everything inside the < > brackets alone unless a note tells you otherwise.
+    notes like this one are hidden from visitors.
+  -->
+    <!--
+      top menu bar. this same menu is copied on every page, so if you add or rename
+      a page, update the menu on every page. class="active" marks the page you are on.
+    -->
+    <nav class="nav" id="siteNav">
+      <div class="wrap nav-row">
+        <a href="index.html" class="brand">
+          <img src="assets/img/logo-circle.png" alt="WCT Hoops logo" />
+          <span class="brand-word">WCT HOOPS</span>
+        </a>
+        <div class="nav-links">
+          <a href="about.html">The Roots</a>
+          <a href="bookings.html">The Work</a>
+          <a href="alumni.html">The Proof</a>
+          <a href="coaches.html">Coaches</a>
+          <a href="shop.html">Shop</a>
         </div>
-        <div class="media-body">
-          <h3>1-on-1 &amp; Semi-Private</h3>
-          <p>Sessions built around the individual athlete &mdash; shooting, ball handling, footwork, IQ, and position-specific development.</p>
-          <a href="bookings.html#training" class="media-link">Book Training →</a>
+        <div class="nav-right">
+          <div class="nav-socials">
+            <a
+              href="https://www.instagram.com/wcthoops/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle
+                  cx="17.5"
+                  cy="6.5"
+                  r="1"
+                  fill="currentColor"
+                  stroke="none"
+                ></circle></svg
+            ></a>
+          </div>
+          <a href="contact.html" class="nav-cta">Contact</a>
+          <button
+            class="burger"
+            id="burgerBtn"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
         </div>
       </div>
-      <div class="media-card">
-        <div class="media">
-          <img src="assets/img/work-camps.jpg" alt="WCT camp group session">
-          <div class="media-tag">Grades 6&ndash;12</div>
-        </div>
-        <div class="media-body">
-          <h3>Camps &amp; Workshops</h3>
-          <p>The WCT Classic &mdash; high-level skill development, competition, and mentorship from coaches who've played at the highest levels.</p>
-          <a href="bookings.html#camps" class="media-link">View Upcoming Camps →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- the proof -->
-<section class="on-dark" id="proof">
-  <div class="wrap">
-    <div class="eyebrow">The Proof</div>
-    <h2 style="font-size:clamp(30px,5vw,56px);text-transform:uppercase;max-width:16ch;margin-top:16px;">The Fruits<br>Bear Witness.</h2>
-    <p class="muted" style="margin-top:16px;max-width:52ch;font-size:15.5px;line-height:1.6;">A collection of players who've gone through the WCT development system &mdash; college, professional, and national-team athletes built from the ground up.</p>
-    <div class="proof-grid">
-      <div class="alum-card">
-        <div class="alum-media"><img src="assets/img/alum-isaac.jpg" alt="Isaac Jack headshot"></div>
-        <div class="alum-body"><h4>Isaac Jack</h4><div class="school">Edmonton Stingers · Pro</div><div class="meta">Forward</div></div>
-      </div>
-      <div class="alum-card">
-        <div class="alum-media"><img src="assets/img/alum-aubrey.jpg" alt="Aubrey Dorey-Havens headshot"></div>
-        <div class="alum-body"><h4>Aubrey Dorey-Havens</h4><div class="school">Carleton University · U SPORTS</div><div class="meta">Guard &middot; Senior</div></div>
-      </div>
-      <div class="alum-card">
-        <div class="alum-media"><img src="assets/img/alum-nyce.jpg" alt="Dionycius Bakare headshot"></div>
-        <div class="alum-body"><h4>Dionycius Bakare</h4><div class="school">UC Berkeley · NCAA D1</div><div class="meta">Guard/Forward &middot; Freshman</div></div>
-      </div>
-      <div class="alum-card">
-        <div class="alum-media"><img src="assets/img/alum-keoni.jpg" alt="Keoni Sacco"></div>
-        <div class="alum-body"><h4>Keoni Sacco</h4><div class="school">St. Joseph's · NCAA D1</div><div class="meta">Forward &middot; Freshman</div></div>
-      </div>
-    </div>
-    <div class="proof-stats">
-      <div class="stat"><b>2020</b><span>Founded</span></div>
-      <div class="stat"><b>9+</b><span>NCAA / U SPORTS Alumni</span></div>
-      <div class="stat"><b>20+</b><span>Yrs Pro Experience Coaching</span></div>
-      <div class="stat"><b>1</b><span>Standard, No Shortcuts</span></div>
-    </div>
-    <div style="margin-top:44px;"><a href="alumni.html" class="btn btn-outline">View Full Alumni Roster →</a></div>
-  </div>
-</section>
-
-<!-- the roots -->
-<section class="on-paper" id="roots">
-  <div class="wrap">
-    <div class="eyebrow">The Roots</div>
-    <div class="split" style="margin-top:8px;">
-      <div class="split-media" style="position:relative;">
-        <img src="assets/img/roots.jpg" alt="Ransford Brempong and Jarryn Skeete, WCT Hoops co-founders">
-        <div style="position:absolute;left:-6px;bottom:-6px;background:var(--gold);color:var(--ink);font-family:'Anton';font-size:15px;padding:10px 18px;letter-spacing:0.04em;">EST. 2020</div>
-      </div>
-      <div>
-        <h2>Work Creates<br>Transformation.</h2>
-        <p>WCT Hoops was created in 2020 by Ransford Brempong and Jarryn Skeete with a simple goal: add value back to the grassroots basketball community.</p>
-        <p>From the beginning, WCT has been about more than basketball &mdash; creating pathways for athletes to sharpen their skills, gain exposure at the highest levels, and connect with mentors who've already travelled the road. No shortcuts. Just work.</p>
-        <div style="margin-top:22px;display:flex;gap:22px;flex-wrap:wrap;">
-          <div style="font-size:13px;color:var(--muted-light);"><b style="display:block;color:var(--text-light);font-size:14.5px;">Ransford Brempong</b>Owner / Founder / Head Coach</div>
-          <div style="font-size:13px;color:var(--muted-light);"><b style="display:block;color:var(--text-light);font-size:14.5px;">Jarryn Skeete</b>Co-Founder</div>
-        </div>
-        <a href="about.html" class="btn btn-outline-dark" style="margin-top:28px;">Read Our Story →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- the standard -->
-<section class="on-dark standard" id="standard">
-  <div class="wrap">
-    <div class="quote-mark">&ldquo;</div>
-    <h2>Excellence in the details.</h2>
-    <p>Our standard is simple: put the athlete's development first and build genuine relationships along the way. We strive to bring a level of excellence and expertise to everything we do &mdash; mastering the simple things and doing them at a high level.</p>
-    <div class="standard-words">
-      <span>Skill</span><span>IQ</span><span>Competition</span><span>Discipline</span><span>Mentorship</span><span>Character</span>
-    </div>
-  </div>
-</section>
-
-<!-- join wct -->
-<section class="on-dark" id="join">
-  <div class="wrap">
-    <div class="eyebrow">Join WCT</div>
-    <div class="split" style="margin-top:8px;align-items:start;">
-      <div>
-        <h2 style="font-size:clamp(28px,4.4vw,44px);text-transform:uppercase;">Start Your<br>Development.</h2>
-        <p class="muted" style="margin-top:16px;font-size:15px;line-height:1.6;max-width:36ch;">Tell us about your game and our team will be in touch within 24 hours.</p>
-        <div class="info-block">
-          <div class="info-row"><div class="k">Phone</div><div><a href="tel:16044452890">(604) 445-2890</a></div></div>
-          <div class="info-row"><div class="k">Email</div><div><a href="mailto:rans@wcthoops.com">rans@wcthoops.com</a></div></div>
-          <div class="info-row"><div class="k">Location</div><div>North Vancouver, BC</div></div>
-        </div>
-        <div class="social-row">
-          <a href="https://www.instagram.com/wcthoops/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a>
-        </div>
-      </div>
-      <div>
-        <a href="contact.html" class="btn btn-solid">Go To Contact Form →</a>
-        <p class="muted" style="margin-top:16px;font-size:13.5px;max-width:36ch;line-height:1.6;">Or head to the full contact page to tell us about your game, your goals, and which program fits best.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="foot-top">
-      <div>
-        <div class="foot-brand">
-          <img src="assets/img/logo.jpg" alt="WCT Hoops logo">
-          <span>WCT HOOPS</span>
-        </div>
-        <p class="foot-tag">West Coast Training &mdash; player development from the roots up. Individual training, semi-private groups, and camps in North Vancouver, BC.</p>
-      </div>
-      <div class="foot-col">
-        <h5>Navigate</h5>
+      <!-- the menu that opens on phones when the three line button is tapped -->
+      <div class="mobile-menu" id="mobileMenu">
         <a href="about.html">The Roots</a>
         <a href="bookings.html">The Work</a>
         <a href="alumni.html">The Proof</a>
         <a href="coaches.html">Coaches</a>
         <a href="shop.html">Shop</a>
         <a href="contact.html">Contact</a>
+        <div class="mm-socials">
+          <a
+            href="https://www.instagram.com/wcthoops/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Instagram"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle
+                cx="17.5"
+                cy="6.5"
+                r="1"
+                fill="currentColor"
+                stroke="none"
+              ></circle></svg
+          ></a>
+        </div>
       </div>
-      <div class="foot-col">
-        <h5>Contact</h5>
-        <a href="tel:16044452890">(604) 445-2890</a>
-        <a href="mailto:rans@wcthoops.com">rans@wcthoops.com</a>
-        <p>North Vancouver, BC</p>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>&copy; 2026 WCT Hoops. All rights reserved.</span>
-      <span>Iron Sharpens Iron.</span>
-    </div>
-  </div>
-</footer>
+    </nav>
 
-<script src="assets/js/main.js"></script>
-</body>
+    <!-- hero: the full screen video at the top. the video files are in assets/video and the poster image shows while it loads -->
+    <header class="hero" id="top">
+      <div class="hero-media">
+        <video
+          id="heroVideo"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="assets/img/hero-poster.jpg"
+        >
+          <source src="assets/video/hero.webm" type="video/webm" />
+          <source src="assets/video/hero.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <button
+        class="hero-video-toggle"
+        id="heroSoundToggle"
+        aria-label="Unmute video"
+      >
+        &#128263;
+      </button>
+      <div class="wrap">
+        <div class="hero-brandmark">
+          <img src="assets/img/logo-circle.png" alt="WCT Hoops emblem" />
+        </div>
+        <div class="hero-content" id="heroContent">
+          <div class="hero-kicker">
+            West Coast Training &nbsp;&middot;&nbsp; North Vancouver, BC
+          </div>
+          <h1>Where Work<br />Creates <em>Transformation</em></h1>
+          <p class="hero-sub">
+            Player development from the roots up. Individual training,
+            semi-private groups, and camps built around one standard &mdash; no
+            shortcuts, just work.
+          </p>
+          <!-- the rotating phrases under the intro. each <li> line is one phrase -->
+          <div class="ticker" aria-hidden="true">
+            <ul>
+              <li><span>&mdash;</span> Build While You Fly</li>
+              <li><span>&mdash;</span> Fundamentals Over Everything</li>
+              <li><span>&mdash;</span> Iron Sharpens Iron</li>
+              <li><span>&mdash;</span> Simple Things at a High Level</li>
+            </ul>
+          </div>
+          <div class="hero-actions">
+            <a href="bookings.html" class="btn btn-solid">Book Training</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- philosophy: photo and short text about the wct approach -->
+    <section class="on-dark" id="philosophy">
+      <div class="wrap">
+        <div class="eyebrow">The Philosophy</div>
+        <div class="split" style="margin-top: 8px">
+          <div>
+            <h2>Iron Sharpens<br />Iron.</h2>
+            <p>
+              From day one, our vision has been simple: no days off in the gym.
+              We intentionally curate a challenging environment where players
+              are pushed by the coaches, teammates, and competition around them.
+            </p>
+            <p>
+              We believe growth happens when you're surrounded by people who
+              demand more from you and refuse to let you settle &mdash; because
+              transformation doesn't happen in comfort.
+            </p>
+          </div>
+          <div class="split-media">
+            <img
+              src="assets/img/philosophy.jpg"
+              alt="WCT coach working with a player one-on-one"
+            />
+            <div class="frame"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- the work: two cards that link to training and camps on bookings.html -->
+    <section class="on-ink2" id="work">
+      <div class="wrap">
+        <div class="eyebrow">The Work</div>
+        <div
+          class="work-head"
+          style="
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 24px;
+            align-items: flex-end;
+            margin-top: 16px;
+          "
+        >
+          <h2
+            style="
+              font-size: clamp(30px, 4.6vw, 52px);
+              text-transform: uppercase;
+              max-width: 14ch;
+            "
+          >
+            Training. Teams.<br />Camps.
+          </h2>
+          <p
+            class="muted"
+            style="max-width: 38ch; font-size: 15.5px; line-height: 1.6"
+          >
+            Every path is built around the same goal &mdash; create an
+            environment that challenges you, develops you, and adds value to
+            your journey.
+          </p>
+        </div>
+        <div class="card-grid cols-2">
+          <div class="media-card">
+            <div class="media">
+              <img
+                src="assets/img/work-training.jpg"
+                alt="1-on-1 skills training session"
+              />
+              <div class="media-tag">From $130</div>
+            </div>
+            <div class="media-body">
+              <h3>1-on-1 &amp; Semi-Private</h3>
+              <p>
+                Sessions built around the individual athlete &mdash; shooting,
+                ball handling, footwork, IQ, and position-specific development.
+              </p>
+              <a href="bookings.html#training" class="media-link"
+                >Book Training →</a
+              >
+            </div>
+          </div>
+          <div class="media-card">
+            <div class="media">
+              <img
+                src="assets/img/work-camps.jpg"
+                alt="WCT camp group session"
+              />
+              <div class="media-tag">Grades 6&ndash;12</div>
+            </div>
+            <div class="media-body">
+              <h3>Camps &amp; Workshops</h3>
+              <p>
+                The WCT Classic &mdash; high-level skill development,
+                competition, and mentorship from coaches who've played at the
+                highest levels.
+              </p>
+              <a href="bookings.html#camps" class="media-link"
+                >View Upcoming Camps →</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- the proof: a preview of a few alumni and a button to the full list on alumni.html -->
+    <section class="on-dark" id="proof">
+      <div class="wrap">
+        <div class="eyebrow">The Proof</div>
+        <h2
+          style="
+            font-size: clamp(30px, 5vw, 56px);
+            text-transform: uppercase;
+            max-width: 16ch;
+            margin-top: 16px;
+          "
+        >
+          The Fruits<br />Bear Witness.
+        </h2>
+        <p
+          class="muted"
+          style="
+            margin-top: 16px;
+            max-width: 52ch;
+            font-size: 15.5px;
+            line-height: 1.6;
+          "
+        >
+          A collection of players who've gone through the WCT development system
+          &mdash; college, professional, and national-team athletes built from
+          the ground up.
+        </p>
+        <div class="proof-grid">
+          <div class="alum-card">
+            <div class="alum-media">
+              <img src="assets/img/alum-isaac.jpg" alt="Isaac Jack headshot" />
+            </div>
+            <div class="alum-body">
+              <h4>Isaac Jack</h4>
+              <div class="school">Edmonton Stingers · Pro</div>
+              <div class="meta">Forward</div>
+            </div>
+          </div>
+          <div class="alum-card">
+            <div class="alum-media">
+              <img
+                src="assets/img/alum-aubrey.jpg"
+                alt="Aubrey Dorey-Havens headshot"
+              />
+            </div>
+            <div class="alum-body">
+              <h4>Aubrey Dorey-Havens</h4>
+              <div class="school">Carleton University · U SPORTS</div>
+              <div class="meta">Guard &middot; Senior</div>
+            </div>
+          </div>
+          <div class="alum-card">
+            <div class="alum-media">
+              <img
+                src="assets/img/alum-nyce.jpg"
+                alt="Dionycius Bakare headshot"
+              />
+            </div>
+            <div class="alum-body">
+              <h4>Dionycius Bakare</h4>
+              <div class="school">UC Berkeley · NCAA D1</div>
+              <div class="meta">Guard/Forward &middot; Freshman</div>
+            </div>
+          </div>
+          <div class="alum-card">
+            <div class="alum-media">
+              <img src="assets/img/alum-keoni.jpg" alt="Keoni Sacco" />
+            </div>
+            <div class="alum-body">
+              <h4>Keoni Sacco</h4>
+              <div class="school">St. Joseph's · NCAA D1</div>
+              <div class="meta">Forward &middot; Freshman</div>
+            </div>
+          </div>
+        </div>
+        <div class="proof-stats">
+          <div class="stat"><b>2020</b><span>Founded</span></div>
+          <div class="stat"><b>10+</b><span>NCAA D1 Alumni</span></div>
+          <div class="stat">
+            <b>20+</b><span>Yrs Pro Experience Coaching</span>
+          </div>
+          <div class="stat"><b>1</b><span>Standard, No Shortcuts</span></div>
+        </div>
+        <div style="margin-top: 44px">
+          <a href="alumni.html" class="btn btn-outline"
+            >View Full Alumni Roster →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- the roots: short version of the wct story with a link to the about page -->
+    <section class="on-paper" id="roots">
+      <div class="wrap">
+        <div class="eyebrow">The Roots</div>
+        <div class="split" style="margin-top: 8px">
+          <div class="split-media" style="position: relative">
+            <img
+              src="assets/img/roots.jpg"
+              alt="Ransford Brempong and Jarryn Skeete, WCT Hoops co-founders"
+            />
+            <div
+              style="
+                position: absolute;
+                left: -6px;
+                bottom: -6px;
+                background: var(--gold);
+                color: var(--ink);
+                font-family: &quot;Anton&quot;;
+                font-size: 15px;
+                padding: 10px 18px;
+                letter-spacing: 0.04em;
+              "
+            >
+              EST. 2020
+            </div>
+          </div>
+          <div>
+            <h2>Work Creates<br />Transformation.</h2>
+            <p>
+              WCT Hoops was created in 2020 by Ransford Brempong and Jarryn
+              Skeete with a simple goal: add value back to the grassroots
+              basketball community.
+            </p>
+            <p>
+              From the beginning, WCT has been about more than basketball
+              &mdash; creating pathways for athletes to sharpen their skills,
+              gain exposure at the highest levels, and connect with mentors
+              who've already travelled the road. No shortcuts. Just work.
+            </p>
+            <div
+              style="
+                margin-top: 22px;
+                display: flex;
+                gap: 22px;
+                flex-wrap: wrap;
+              "
+            >
+              <div style="font-size: 13px; color: var(--muted-light)">
+                <b
+                  style="
+                    display: block;
+                    color: var(--text-light);
+                    font-size: 14.5px;
+                  "
+                  >Ransford Brempong</b
+                >Founder
+              </div>
+              <div style="font-size: 13px; color: var(--muted-light)">
+                <b
+                  style="
+                    display: block;
+                    color: var(--text-light);
+                    font-size: 14.5px;
+                  "
+                  >Jarryn Skeete</b
+                >Co-Founder
+              </div>
+            </div>
+            <a
+              href="about.html"
+              class="btn btn-outline-dark"
+              style="margin-top: 28px"
+              >Read Our Story →</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- the standard: big quote and the six words underneath -->
+    <section class="on-dark standard" id="standard">
+      <div class="wrap">
+        <div class="quote-mark">&ldquo;</div>
+        <h2>Excellence in the details.</h2>
+        <p>
+          Our standard is simple: put the athlete's development first and build
+          genuine relationships along the way. We strive to bring a level of
+          excellence and expertise to everything we do &mdash; mastering the
+          simple things and doing them at a high level.
+        </p>
+        <div class="standard-words">
+          <span>Skill</span><span>IQ</span><span>Competition</span
+          ><span>Discipline</span><span>Mentorship</span><span>Character</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- join wct: contact details and a button to the contact form -->
+    <section class="on-dark" id="join">
+      <div class="wrap">
+        <div class="eyebrow">Join WCT</div>
+        <div class="split" style="margin-top: 8px; align-items: start">
+          <div>
+            <h2
+              style="
+                font-size: clamp(28px, 4.4vw, 44px);
+                text-transform: uppercase;
+              "
+            >
+              Start Your<br />Development.
+            </h2>
+            <p
+              class="muted"
+              style="
+                margin-top: 16px;
+                font-size: 15px;
+                line-height: 1.6;
+                max-width: 36ch;
+              "
+            >
+              Tell us about your game and our team will be in touch within 24
+              hours.
+            </p>
+            <div class="info-block">
+              <div class="info-row">
+                <div class="k">Phone</div>
+                <div><a href="tel:16044452890">(604) 445-2890</a></div>
+              </div>
+              <div class="info-row">
+                <div class="k">Email</div>
+                <div>
+                  <a href="mailto:rans@wcthoops.com">rans@wcthoops.com</a>
+                </div>
+              </div>
+              <div class="info-row">
+                <div class="k">Location</div>
+                <div>North Vancouver, BC</div>
+              </div>
+            </div>
+            <div class="social-row">
+              <a
+                href="https://www.instagram.com/wcthoops/"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="1"
+                    fill="currentColor"
+                    stroke="none"
+                  ></circle></svg
+              ></a>
+            </div>
+          </div>
+          <div>
+            <a href="contact.html" class="btn btn-solid"
+              >Go To Contact Form →</a
+            >
+            <p
+              class="muted"
+              style="
+                margin-top: 16px;
+                font-size: 13.5px;
+                max-width: 36ch;
+                line-height: 1.6;
+              "
+            >
+              Or head to the full contact page to tell us about your game, your
+              goals, and which program fits best.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      bottom of the page with links, phone and email. it is the same on every page,
+      so if you change something here, change it on the other pages too.
+    -->
+    <footer>
+      <div class="wrap">
+        <div class="foot-top">
+          <div>
+            <div class="foot-brand">
+              <img src="assets/img/logo.jpg" alt="WCT Hoops logo" />
+              <span>WCT HOOPS</span>
+            </div>
+            <p class="foot-tag">
+              West Coast Training &mdash; player development from the roots up.
+              Individual training, semi-private groups, and camps in North
+              Vancouver, BC.
+            </p>
+          </div>
+          <div class="foot-col">
+            <h5>Navigate</h5>
+            <a href="about.html">The Roots</a>
+            <a href="bookings.html">The Work</a>
+            <a href="alumni.html">The Proof</a>
+            <a href="coaches.html">Coaches</a>
+            <a href="shop.html">Shop</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div class="foot-col">
+            <h5>Contact</h5>
+            <a href="tel:16044452890">(604) 445-2890</a>
+            <a href="mailto:rans@wcthoops.com">rans@wcthoops.com</a>
+            <p>North Vancouver, BC</p>
+          </div>
+        </div>
+        <div class="foot-bottom">
+          <span>&copy; 2026 WCT Hoops. All rights reserved.</span>
+          <span>Iron Sharpens Iron.</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- runs the phone menu, the home page video, the contact form and the back buttons. keep this line -->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>

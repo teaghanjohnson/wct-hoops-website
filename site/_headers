@@ -1,3 +1,7 @@
+# security and caching rules netlify applies to every page. leave these alone unless something stops loading.
+# the content security policy line only allows scripts, styles, fonts and images from this site and google fonts.
+# so a new outside script (google analytics, for example) has to be added to that line or it will be blocked.
+# the assets rule lets browsers keep photos, styles and scripts for a week so pages load faster.
 /*
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY

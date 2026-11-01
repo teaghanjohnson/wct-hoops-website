@@ -1,9 +1,12 @@
+// shared stripe setup used by the server functions.
+// the secret key comes from netlify's environment variables (or .env when testing), never from this file
 const Stripe = require("stripe");
 
 // no api version passed on purpose, so stripe uses the account's default
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-// must match slug() in shop-cart.js exactly
+// turns a product name and size into the lookup key stripe uses, like wct hoops tee black plus xl.
+// must match the slug function in the shop cart script (site/assets/js) exactly
 const slug = (t) =>
   String(t)
     .toLowerCase()

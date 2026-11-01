@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!--
+  player journey page template
+
+  this is the page that opens when someone clicks a player card on the proof page (alumni.html).
+  make one copy of this file for each player.
+
+  the full steps are in guide.txt in the future_features folder. the short version:
+  1. copy this file into the site folder
+  2. rename the copy after the player, all lowercase with underscores, like player_isaac_jack.html
+  3. open it in a plain text editor (vs code, textedit or notepad)
+  4. search for the word edit: because every spot you need to change is marked with it
+     and replace anything in [square brackets] with the real info
+  5. save, then make the player's card on alumni.html point to this file (part 1 of guide.txt)
+
+  rules of thumb:
+  only change the words between the tags. in <h3>school name</h3> you change school name, never the <h3> parts.
+  notes like this one are hidden from visitors, so they are safe to leave in.
+  photos go in site/assets/img, then type the file name where it says src="assets/img/....jpg"
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!-- edit: the short description google shows under the link in search results -->
+<meta name="description" content="[Player Name]'s journey with WCT Hoops — from the roots up to [Current Team].">
+
+<link rel="icon" href="assets/img/logo-circle.png" type="image/png">
+
+<!-- edit: the text shown on the browser tab -->
+<title>[Player Name] — WCT Hoops</title>
+
+<!-- fonts and styles. leave these lines as they are -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/player-and-camp-cards.css">
+</head>
+<body>
+
+<!-- top menu. same on every page, nothing to change -->
+<nav class="nav" id="siteNav">
+  <div class="wrap nav-row">
+    <a href="index.html" class="brand"><img src="assets/img/logo-circle.png" alt="WCT Hoops logo"><span class="brand-word">WCT HOOPS</span></a>
+    <div class="nav-links">
+      <a href="about.html">The Roots</a>
+      <a href="bookings.html">The Work</a>
+      <a href="alumni.html" class="active">The Proof</a>
+      <a href="coaches.html">Coaches</a>
+      <a href="shop.html">Shop</a>
+    </div>
+    <div class="nav-right">
+      <div class="nav-socials"><a href="https://www.instagram.com/wcthoops/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a></div>
+      <a href="contact.html" class="nav-cta">Contact</a>
+      <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="about.html">The Roots</a><a href="bookings.html">The Work</a><a href="alumni.html">The Proof</a>
+    <a href="coaches.html">Coaches</a><a href="shop.html">Shop</a><a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+
+<!-- section 1: top of the page with the photo, name and quick facts -->
+<header class="player-hero">
+
+  <!-- edit (optional): the faded background photo behind everything -->
+  <div class="player-hero-bg"><img src="assets/img/action-3.jpg" alt=""></div>
+
+  <div class="wrap">
+    <!-- back button that returns to the proof page. nothing to change -->
+    <a href="alumni.html" class="section-back-link">← Back to The Proof</a>
+
+    <div class="player-hero-grid">
+
+      <!-- edit: the player's main photo and their name. the alt text is read out loud for visitors who cannot see the photo -->
+      <div class="player-photo">
+        <img src="assets/img/alum-[name].jpg" alt="[Player Name]">
+        <div class="frame"></div>
+      </div>
+
+      <div>
+        <!-- edit: the small gold label. use their level, like pro, ncaa d1, u sports or prep -->
+        <div class="eyebrow">WCT Alumni · [Level]</div>
+
+        <!-- edit: the player's name. <br> starts a new line, so put it between the first and last name -->
+        <h1>[First]<br>[Last]</h1>
+
+        <!-- edit: where they play now -->
+        <div class="player-team">[Current Team · League]</div>
+
+        <!-- edit: a short intro, two or three sentences -->
+        <p class="player-intro">[Two or three sentences introducing the athlete — who they are as a player and what their WCT story is about.]</p>
+
+        <!--
+          quick facts. each fact is one line that starts with <div>.
+          to remove a fact, delete its whole line.
+          to add a fact, copy a line and change both parts.
+        -->
+        <div class="player-facts">
+          <div><span>Position</span><b>[Guard]</b></div>
+          <div><span>Height</span><b>[6’2”]</b></div>
+          <div><span>Hometown</span><b>[City, Prov]</b></div>
+          <div><span>Class / Year</span><b>[2026]</b></div>
+          <div><span>With WCT Since</span><b>[Year]</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<!-- section 2: the journey, a timeline of milestones -->
+<section class="on-ink2">
+  <div class="wrap journey">
+    <div>
+      <div class="eyebrow" style="color:var(--gold-light);">The Journey</div>
+      <h2>From the Roots Up.</h2>
+      <p class="muted" style="margin-top:14px;line-height:1.65;max-width:36ch;">Every step, from the first session to where they play now.</p>
+    </div>
+
+    <!--
+      each milestone is one <li> ... </li> block with a year, a title and a short description.
+      put them in order with the oldest at the top.
+      to add one, copy a whole <li> ... </li> block and paste it where it belongs.
+      to remove one, delete its whole block.
+      the last one automatically gets the solid gold dot, so make that one where they are now.
+    -->
+    <ol class="timeline">
+      <li>
+        <div class="year">[Year]</div>
+        <h3>First Session at WCT</h3>
+        <p>[Where it started — age, grade, what they were working on.]</p>
+      </li>
+      <li>
+        <div class="year">[Year]</div>
+        <h3>[High School / Club Team]</h3>
+        <p>[A breakout season, award, or turning point.]</p>
+      </li>
+      <li>
+        <div class="year">[Year–Year]</div>
+        <h3>[College / University]</h3>
+        <p>[College career highlights.]</p>
+      </li>
+      <li>
+        <div class="year">Now</div>
+        <h3>[Current Team · League]</h3>
+        <p>[Where they are now and what’s next.]</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+
+<!--
+  section 3: a quote from the player.
+  no quote yet? delete everything from here down to the end quote note and the section disappears.
+-->
+<section class="on-dark standard">
+  <div class="wrap">
+    <div class="quote-mark">“</div>
+    <!-- edit: the quote -->
+    <h2>[A quote from the athlete about what WCT meant to their development.]</h2>
+    <!-- edit: the player's name -->
+    <div class="standard-words"><span>— [Player Name]</span></div>
+  </div>
+</section>
+<!-- end quote -->
+
+
+<!--
+  section 4: photo gallery.
+  each <img> line is one photo. add or remove lines as you like and the layout adjusts by itself.
+-->
+<section class="on-ink2">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--gold-light);">In the Gym</div>
+    <div class="player-gallery">
+      <!-- edit: the photo file names, and describe each photo inside alt -->
+      <img src="assets/img/[photo-1].jpg" alt="[Player Name] training at WCT">
+      <img src="assets/img/[photo-2].jpg" alt="[Player Name] with WCT coaches">
+      <img src="assets/img/[photo-3].jpg" alt="[Player Name] in a game">
+    </div>
+  </div>
+</section>
+
+
+<!-- section 5: links to the previous and next player, plus the start training button -->
+<section class="on-dark">
+  <div class="wrap">
+    <!--
+      edit: links to the players before and after this one on the proof page.
+      the part in href is the other player's page file name and the bold text is their name.
+      if a neighbour has no page yet, point the link at alumni.html or delete that line.
+    -->
+    <div class="player-pager">
+      <a href="player_[previous_name].html"><small>← Previous</small><b>[Previous Player]</b></a>
+      <a href="player_[next_name].html"><small>Next →</small><b>[Next Player]</b></a>
+    </div>
+  </div>
+</section>
+
+<section class="on-dark standard" style="padding-top:0;">
+  <div class="wrap">
+    <h2>Your name could be next.</h2>
+    <p>Every athlete on The Proof started the same way &mdash; showing up and doing the work.</p>
+    <div class="hero-actions" style="margin-top:30px;"><a href="bookings.html#training" class="btn btn-solid">Start Training →</a></div>
+  </div>
+</section>
+
+
+<!-- bottom of the page. same on every page, nothing to change -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand"><img src="assets/img/logo.jpg" alt="WCT Hoops logo"><span>WCT HOOPS</span></div>
+        <p class="foot-tag">West Coast Training &mdash; player development from the roots up. Individual training, semi-private groups, and camps in North Vancouver, BC.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Navigate</h5>
+        <a href="about.html">The Roots</a><a href="bookings.html">The Work</a><a href="alumni.html">The Proof</a>
+        <a href="coaches.html">Coaches</a><a href="shop.html">Shop</a><a href="contact.html">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <a href="tel:16044452890">(604) 445-2890</a>
+        <a href="mailto:rans@wcthoops.com">rans@wcthoops.com</a>
+        <p>North Vancouver, BC</p>
+      </div>
+    </div>
+    <div class="foot-bottom"><span>&copy; 2026 WCT Hoops. All rights reserved.</span><span>Iron Sharpens Iron.</span></div>
+  </div>
+</footer>
+
+<!-- makes the phone menu open and close. keep this line -->
+<script src="assets/js/main.js"></script>
+</body>
+</html>

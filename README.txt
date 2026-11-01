@@ -6,6 +6,7 @@ WHAT'S WHERE
 - netlify/lib/          shared Stripe setup used by the functions.
 - scripts/              one-time helper that creates the shop items in a Stripe test account.
 - STRIPE_INTEGRATION_TODO.md   everything still to set up for payments.
+- future_features/      player pages and upcoming camp cards, ready to add later. start with future_features/guide.txt
 
 TO PUBLISH
 Drag-and-drop deploys no longer work, because the shop needs server functions.
